@@ -1,0 +1,7 @@
+GET http://localhost:3000/api/helloWorld
+
+###
+
+POST http://localhost:3000/api/helloWorld
+
+hello post body
