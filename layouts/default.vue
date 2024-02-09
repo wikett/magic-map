@@ -1,15 +1,12 @@
-<script setup>
-const user = useUser();
-definePageMeta({
-  layout: "plain",
-});
-</script>
 <template>
-  <nav>
-    <NuxtLink to="/">Home</NuxtLink> |
-    <NuxtLink to="/mapa-localizaciones">Mapa localizaciones</NuxtLink>
-    <NuxtLink v-if="!user.isLoggedIn" to="/login"> | Login</NuxtLink>
-    <a v-else href="#" @click.prevent="user.logout"> | Logout</a>
-  </nav>
-  <slot></slot>
+    <div>
+        <TheHeader />
+        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <NuxtPage />
+        </div>   
+        <TheFooter />
+    </div>
 </template>
+<script setup>
+
+</script>

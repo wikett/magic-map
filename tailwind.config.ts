@@ -1,9 +1,13 @@
 import type { Config } from 'tailwindcss'
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 export default <Partial<Config>>{
   content: ["./index.html", "./src/**/*.{vue,js,ts}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         'blue': {
           '50': '#f1f8fe',
