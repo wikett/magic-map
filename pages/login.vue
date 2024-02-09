@@ -10,7 +10,7 @@ function login() {
 }
 </script>
 <template>
-  <form @submit.prevent="login">
+  <form @submit.prevent="user.login">
     <h1>Username</h1>
     <label for="username">
       <input type="text" />

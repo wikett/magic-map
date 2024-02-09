@@ -10,7 +10,7 @@ export default defineNuxtConfig({
       brotli: true,
     },
   },
-  modules: ["@pinia/nuxt", "nuxt-lodash"],
+  modules: ["@pinia/nuxt", "nuxt-lodash", "@nuxt/image","@nuxt/ui"],
   imports: {
     dirs: ["stores"],
   },
