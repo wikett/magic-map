@@ -3,6 +3,10 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 export default <Partial<Config>>{
   content: ["./index.html", "./src/**/*.{vue,js,ts}"],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
   theme: {
     extend: {
       fontFamily: {

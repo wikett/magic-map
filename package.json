@@ -10,8 +10,11 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "date-fns": "^3.3.1",
+    "mapbox-gl": "^3.1.2",
     "nuxt": "^3.10.0",
     "nuxt-lodash": "^2.5.3",
+    "nuxt-mapbox": "^1.5.8",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5"
   },

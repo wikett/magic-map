@@ -14,7 +14,7 @@ export default defineNuxtConfig({
       brotli: true,
     },
   },
-  modules: ["@pinia/nuxt", "nuxt-lodash", "@nuxt/image","@nuxt/ui"],
+  modules: ["@pinia/nuxt", "nuxt-lodash", "@nuxt/image","@nuxt/ui", "nuxt-mapbox", "@nuxt/content",],
   components: [
     { path: "~/components/common" },
     { path: "~/components/global" },
@@ -46,5 +46,9 @@ export default defineNuxtConfig({
     cloudinary: {
       baseURL: 'https://res.cloudinary.com/djhqderty/image/upload/'
     }
+  },
+  mapbox: {
+    accessToken: process.env.MAPBOX_API_KEY
   }
+  
 });
