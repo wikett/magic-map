@@ -6,15 +6,17 @@ export default defineNuxtConfig({
     "/api/**": { isr: false },
   },
   nitro: {
-    prerender: {
-      crawlLinks: true,
-      routes: ["/", "/404.html", "/200.html"],
-    },
     compressPublicAssets: {
       brotli: true,
     },
   },
-  modules: ["@pinia/nuxt", "nuxt-lodash", "@nuxt/image","@nuxt/ui", "nuxt-mapbox", "@nuxt/content",],
+  modules: [
+    "@pinia/nuxt",
+    "nuxt-lodash",
+    "@nuxt/image",
+    "@nuxt/ui",
+    "nuxt-mapbox",
+    "@nuxt/content",],
   components: [
     { path: "~/components/common" },
     { path: "~/components/global" },
