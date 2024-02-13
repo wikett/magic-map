@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   routeRules: {
     "/**": { isr: true },
     "/api/**": { isr: false },
@@ -14,8 +14,7 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "nuxt-lodash",
     "@nuxt/image",
-    "@nuxt/ui",
-    "nuxt-mapbox",
+    "@nuxt/ui",,
     "@nuxt/content",],
   components: [
     { path: "~/components/common" },
@@ -49,8 +48,8 @@ export default defineNuxtConfig({
       baseURL: 'https://res.cloudinary.com/djhqderty/image/upload/'
     }
   },
-  mapbox: {
-    accessToken: process.env.MAPBOX_API_KEY
-  }
+  // mapbox: {
+  //   accessToken: process.env.MAPBOX_API_KEY
+  // }
   
 });

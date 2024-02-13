@@ -1,30 +1,53 @@
 <template>
   <div class="py-12">
-    <div class="mx-auto max-w-7xl px-6 pb-[700px] lg:px-8">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-full lg:text-center absolute]">
         <h1
           class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
         >
           Mapa de localizaciones para fotografia nocturna
         </h1>
+        <a href="/localizaciones/564c5810af75e50300c0a3bf/volcan-de-stromboli"
+          >Prueba link</a
+        >
         <p class="mt-6 text-lg leading-8 text-gray-600">
           Más de 1000 localizaciones para fotografía tanto nocturna, de paisaje,
           lightpainting o de larga duración. Comparte con nuestra comunidad
           estos magníficos lugares.
         </p>
+
         <div class="relative top-0 left-0">
-          <MapboxMap
-            map-id="map2"
-            style="top: 20px; width: 100%; height: 700px"
-            :options="{
-              style: '', // style URL
-              center: [-2.4495376, 40.5036935], // starting position
-              zoom: 4.23, // starting zoom
-            }"
-          />
+          <ClientOnly fallback-tag="div" fallback="Cargando localizaciones...">
+            <div style="height: 600px; width: 100%">
+              <l-map
+                ref="map"
+                :zoom="zoom"
+                :center="[47.41322, -1.219482]"
+                :useGlobalLeaflet="true"
+                min-zoom="3"
+                max-zoom="13"
+              >
+                <l-tile-layer
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  layer-type="base"
+                  name="OpenStreetMap"
+                  max-native-zoom="19"
+                ></l-tile-layer>
+                <l-marker-cluster-group>
+                  <l-marker
+                    v-for="loca in localizaciones"
+                    :lat-lng="[loca.latitud, loca.longitud]"
+                    @click="showLoca(loca)"
+                  >
+                    <l-tooltip> {{ loca.titulo }}</l-tooltip>
+                  </l-marker>
+                </l-marker-cluster-group>
+              </l-map>
+            </div>
+          </ClientOnly>
         </div>
       </div>
-      <div class="mx-auto mt-[780px] max-w-full">
+      <div class="mx-auto mt-24 max-w-full">
         <dl
           class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16"
         >
@@ -53,16 +76,141 @@
       </div>
     </div>
   </div>
+  <TransitionRoot as="template" :show="open && locaSelected !== undefined">
+    <Dialog as="div" class="relative z-[1001]" @close="open = false">
+      <TransitionChild
+        as="template"
+        enter="ease-out duration-300"
+        enter-from="opacity-0"
+        enter-to="opacity-100"
+        leave="ease-in duration-200"
+        leave-from="opacity-100"
+        leave-to="opacity-0"
+      >
+        <div
+          class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        />
+      </TransitionChild>
+
+      <div class="fixed inset-0 z-[1001] w-screen overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <TransitionChild
+            as="template"
+            enter="ease-out duration-300"
+            enter-from="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            enter-to="opacity-100 translate-y-0 sm:scale-100"
+            leave="ease-in duration-200"
+            leave-from="opacity-100 translate-y-0 sm:scale-100"
+            leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+          >
+            <DialogPanel
+              class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6"
+            >
+              <div class="absolute right-0 top-0 hidden pr-4 pt-4 sm:block">
+                <button
+                  type="button"
+                  class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                  @click="open = false"
+                >
+                  <span class="sr-only">Close</span>
+                  <XMarkIcon class="h-6 w-6 text-black" aria-hidden="true" />
+                </button>
+              </div>
+              <div class="sm:flex sm:items-start">
+                <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                  <DialogTitle
+                    as="h3"
+                    class="text-base font-semibold leading-6 text-black"
+                    >{{ locaSelected.titulo }}</DialogTitle
+                  >
+                  <div class="mt-2">
+                    <NuxtImg
+                      provider="cloudinary"
+                      :src="`/${locaSelected.cloudinaryId}.jpg`"
+                      width="592"
+                      height="423"
+                      format="webp"
+                      class="object-cover object-center"
+                    />
+                    <p class="text-sm text-black">
+                      {{ locaSelected.acceso }}
+                    </p>
+                    <h3>
+                      {{ locaSelected._id }}
+                    </h3>
+                    <pre> {{ locaSelected._id }}</pre>
+                    <h3>
+                      {{ convertSEO(locaSelected.titulo) }}
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
+                <a
+                  :href="`/localizaciones/${getId(
+                    locaSelected._id
+                  )}/${convertSEO(locaSelected.titulo)}`"
+                >
+                  <button
+                    type="button"
+                    class="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-pink shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto"
+                  >
+                    Ver localización
+                  </button>
+                </a>
+                <button
+                  type="button"
+                  class="mt-3 inline-flex w-full justify-center rounded-md bg-red px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                  @click="open = false"
+                >
+                  Cancel
+                </button>
+              </div>
+            </DialogPanel>
+          </TransitionChild>
+        </div>
+      </div>
+    </Dialog>
+  </TransitionRoot>
 </template>
 
 <script setup>
+import { ref } from "vue";
+import {
+  Dialog,
+  DialogPanel,
+  DialogTitle,
+  TransitionChild,
+  TransitionRoot,
+} from "@headlessui/vue";
+import { ExclamationTriangleIcon, XMarkIcon } from "@heroicons/vue/24/outline";
+const { convertSEO, getId } = seoUtils();
+const open = ref(false);
 import {
   ShareIcon,
   MapIcon,
   DocumentDuplicateIcon,
   RssIcon,
 } from "@heroicons/vue/24/outline";
+import "vue-leaflet-markercluster/dist/style.css";
+import { LMap, LTileLayer, LMarker, LTooltip } from "@vue-leaflet/vue-leaflet";
+import { LMarkerClusterGroup } from "vue-leaflet-markercluster";
 
+const zoom = ref(4);
+const locaSelected = ref({});
+
+const localizaciones = await queryContent(`/localizaciones`).find();
+
+function showLoca(loca) {
+  locaSelected.value = loca;
+  open.value = !open.value;
+
+  console.log(`loca: ${locaSelected.value.titulo}`);
+  console.log(`loca: ${locaSelected.value._id}`);
+  console.log(locaSelected.value._id);
+}
 const features = [
   {
     name: "Comparte con la comunidad",

@@ -26,25 +26,7 @@
           </div>
           <div
             class="aspect-h-3 aspect-w-4 overflow-hidden rounded-lg mt-4 bg-pink-200"
-          >
-            <MapboxMap
-              map-id="map1"
-              :options="{
-                style: 'mapbox://styles/subexpuesta/cl5rug7x1000314qtycqf6cqm', // style URL
-                center: [-2.4495376, 40.5036935], // starting position
-                zoom: 4.23, // starting zoom
-              }"
-            >
-              <!-- <MapboxDefaultMarker
-                marker-id="10"
-                :options="{
-                  draggable: false,
-                }"
-                :lnglat="coordinates"
-              >
-              </MapboxDefaultMarker> -->
-            </MapboxMap>
-          </div>
+          ></div>
         </div>
 
         <!-- Product details -->
@@ -68,7 +50,7 @@
               </p>
             </div>
 
-            <div>
+            <!-- <div>
               <div class="flex items-center">
                 <StarIcon
                   v-for="rating in [0, 1, 2, 3, 4]"
@@ -82,7 +64,7 @@
                   aria-hidden="true"
                 />
               </div>
-            </div>
+            </div> -->
           </div>
 
           <p class="mt-6 text-gray-500">{{ loca.acceso }}</p>
@@ -213,9 +195,10 @@
 
 <script setup>
 import { format } from "date-fns";
-import { StarIcon } from "@heroicons/vue/20/solid";
-import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/vue";
+// import { StarIcon } from "@heroicons/vue/20/solid";
+// import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/vue";
 const route = useRoute();
+//  const mapRef = useMapboxRef("map1");
 
 // useHead({
 //   title: data.value.Title,
@@ -233,22 +216,6 @@ const fechaFotografia = format(loca.fechaToma.$date, "dd-MM-yyyy");
 const contaminacionLuminica = Number.parseInt(loca.contaminacionLuminica) * 10;
 const peligrosidad = Number.parseInt(loca.peligrosidad) * 10;
 
-const marker = useMapboxMarkerRef(10);
-
-const coordinates = ref([{ lng: -71.593916, lat: -33.040681 }]);
-
-// const setCoordinates = () => {
-//     coordinates.value = markerLngLat.value;
-//     console.log(coordinates.value);
-// };
-
-const markerLngLat = computed(() => {
-  return marker.value?.getLngLat();
-});
-
-// const loca = await useAsyncData(localizaciones, () =>
-//   queryContent(`${route.params.id}`).find()
-// );
 function getMapsUrl() {
   return `https://www.google.es/maps/@${loca.latitud},${loca.longitud},15z`;
 }
@@ -318,23 +285,23 @@ const license = {
     "For personal and professional use. You cannot resell or redistribute these icons in their original or modified state.",
   content: `
     <h4>Overview</h4>
-    
+
     <p>For personal and professional use. You cannot resell or redistribute these icons in their original or modified state.</p>
-    
+
     <ul role="list">
     <li>You\'re allowed to use the icons in unlimited projects.</li>
     <li>Attribution is not required to use the icons.</li>
     </ul>
-    
+
     <h4>What you can do with it</h4>
-    
+
     <ul role="list">
     <li>Use them freely in your personal and professional work.</li>
     <li>Make them your own. Change the colors to suit your project or brand.</li>
     </ul>
-    
+
     <h4>What you can\'t do with it</h4>
-    
+
     <ul role="list">
     <li>Don\'t be greedy. Selling or distributing these icons in their original or modified state is prohibited.</li>
     <li>Don\'t be evil. These icons cannot be used on websites or applications that promote illegal or immoral beliefs or activities.</li>
