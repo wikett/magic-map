@@ -3,15 +3,13 @@
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-full lg:text-center absolute]">
         <h1
-          class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+          class="mt-2 text-3xl font-bold tracking-tight text-blue-500 text-opacity-80 sm:text-4xl"
         >
           Mapa de localizaciones para fotografia nocturna
         </h1>
-        <a href="/localizaciones/564c5810af75e50300c0a3bf/volcan-de-stromboli"
-          >Prueba link</a
-        >
-        <p class="mt-6 text-lg leading-8 text-gray-600">
-          Más de 1000 localizaciones para fotografía tanto nocturna, de paisaje,
+
+        <p class="mt-6 text-lg leading-8 text-blue-200">
+          Más de 1500 localizaciones para fotografía tanto nocturna, de paisaje,
           lightpainting o de larga duración. Comparte con nuestra comunidad
           estos magníficos lugares.
         </p>
@@ -56,7 +54,9 @@
             :key="feature.name"
             class="relative pl-16"
           >
-            <dt class="text-base font-semibold leading-7 text-gray-900">
+            <dt
+              class="text-base font-semibold leading-7 text-blue-500 text-opacity-80"
+            >
               <div
                 class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-400"
               >
@@ -68,7 +68,7 @@
               </div>
               {{ feature.name }}
             </dt>
-            <dd class="mt-2 text-base leading-7 text-gray-600">
+            <dd class="mt-2 text-base leading-7 text-blue-200">
               {{ feature.description }}
             </dd>
           </div>
@@ -88,7 +88,7 @@
         leave-to="opacity-0"
       >
         <div
-          class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+          class="fixed inset-0 bg-gray-800 bg-opacity-75 transition-opacity"
         />
       </TransitionChild>
 
@@ -106,7 +106,7 @@
             leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
             <DialogPanel
-              class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6"
+              class="relative transform overflow-hidden rounded-lg bg-blue-950 px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6"
             >
               <div class="absolute right-0 top-0 hidden pr-4 pt-4 sm:block">
                 <button
@@ -122,7 +122,7 @@
                 <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
                   <DialogTitle
                     as="h3"
-                    class="text-base font-semibold leading-6 text-black"
+                    class="text-base font-semibold leading-6 text-blue-500"
                     >{{ locaSelected.titulo }}</DialogTitle
                   >
                   <div class="mt-2">
@@ -134,39 +134,22 @@
                       format="webp"
                       class="object-cover object-center"
                     />
-                    <p class="text-sm text-black">
+                    <p class="text-sm text-blue-200">
                       {{ locaSelected.acceso }}
                     </p>
-                    <h3>
-                      {{ locaSelected._id }}
-                    </h3>
-                    <pre> {{ locaSelected._id }}</pre>
-                    <h3>
-                      {{ convertSEO(locaSelected.titulo) }}
-                    </h3>
                   </div>
                 </div>
               </div>
               <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
-                <a
-                  :href="`/localizaciones/${getId(
-                    locaSelected._id
-                  )}/${convertSEO(locaSelected.titulo)}`"
+                <NuxtLink
+                  :to="`/localizaciones/${getId(locaSelected._id)}/${convertSEO(
+                    locaSelected.titulo
+                  )}`"
                 >
-                  <button
-                    type="button"
-                    class="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-pink shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto"
+                  <UButton :loading="redirecting" @click="redirecting = true"
+                    >Ver localización</UButton
                   >
-                    Ver localización
-                  </button>
-                </a>
-                <button
-                  type="button"
-                  class="mt-3 inline-flex w-full justify-center rounded-md bg-red px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                  @click="open = false"
-                >
-                  Cancel
-                </button>
+                </NuxtLink>
               </div>
             </DialogPanel>
           </TransitionChild>
@@ -178,6 +161,9 @@
 
 <script setup>
 import { ref } from "vue";
+import info from "../content/info.json";
+const redirecting = ref(false);
+const route = useRoute();
 import {
   Dialog,
   DialogPanel,
@@ -237,4 +223,22 @@ const features = [
     icon: RssIcon,
   },
 ];
+
+useHead({
+  title: "Mapa de Localizaciones fotográficas",
+  meta: [
+    {
+      hid: "description",
+      name: "description",
+      content:
+        "🌍 Mapa con más de 1500 localizaciones para fotografía tanto nocturna, de paisaje, lightpainting o de larga duración.",
+    },
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: `https://${info.domain}${route.path}`,
+    },
+  ],
+});
 </script>

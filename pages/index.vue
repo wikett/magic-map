@@ -83,7 +83,7 @@
             >
               Localizaciones de fotografías nocturnas
             </h1>
-            <p class="mt-6 text-lg leading-8 text-gray-300">
+            <p class="mt-6 text-lg leading-8 text-blue-200">
               Descubre nuestro mapa con más de 1500 localizaciones, únete a
               nuestras redes sociales para estar atento al minuto y sigue
               nuestro blog donde vamos contando todo lo referencte a la
@@ -133,11 +133,11 @@
         >
           <div class="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
             <h2
-              class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+              class="text-3xl font-bold tracking-tight text-blue-500 sm:text-4xl"
             >
               Localizaciones destacadas
             </h2>
-            <p class="mt-6 text-xl leading-8 text-gray-600">
+            <p class="mt-6 text-xl leading-8 text-gray-300">
               Esta es una selección de los mejores sitios para hacer fotografía
               nocturna, de paisaje o urbana. Si pincháis en la imágen os llevará
               al lugar exacto de donde se realizó la toma.
@@ -202,48 +202,9 @@
         </div>
       </div>
     </div>
-
-    <!-- CTA Section -->
-    <!-- <CTASection
-      :description="info.tiendaAmiga[0].description"
-      :link="info.tiendaAmiga[0].link"
-      :alt="info.tiendaAmiga[0].alt"
-      :image="info.tiendaAmiga[0].image"
-    ></CTASection> -->
-
-    <!-- Stats -->
-    <!-- <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
-      <div class="mx-auto max-w-2xl lg:mx-0">
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          {{ info.traducciones[2].texto }} {{ info.category }}
-        </h2>
-        <p class="mt-6 text-base leading-7 text-gray-600">
-          {{ info.traducciones[3].texto }}
-        </p>
-      </div>
-      <div
-        class="mx-auto mt-16 flex max-w-2xl flex-col gap-8 lg:mx-0 lg:mt-20 lg:max-w-none lg:flex-row lg:items-end"
-      >
-        <div
-          v-for="item in info.datosCuriosos"
-          class="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-sky-950 p-8 sm:w-3/4 sm:max-w-md sm:flex-row-reverse sm:items-end lg:w-72 lg:max-w-none lg:flex-none lg:flex-col lg:items-start"
-        >
-          <p class="flex-none text-3xl font-bold tracking-tight text-gray-200">
-            {{ item.title }}
-          </p>
-          <div class="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
-            <p class="mt-2 text-base leading-7 text-gray-300">
-              {{ item.description }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div> -->
   </main>
 </template>
 <script setup>
-import { ref } from "vue";
-import info from "../content/info.json";
 import { Dialog, DialogPanel } from "@headlessui/vue";
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 
@@ -257,8 +218,13 @@ const navigation = [
 const mobileMenuOpen = ref(false);
 
 useHead({
-  title: info.title,
-  meta: [{ name: "description", content: info.description }],
-  link: [{ rel: "canonical", href: info.domain }],
+  title: "Subexpuesta.com | Comunidad sobre fotografía nocturna",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Localizaciones de fotografía nocturna. Únete a nuestra comunidad de noctógrafos donde siempre se aprende algo nuevo :)",
+    },
+  ],
 });
 </script>

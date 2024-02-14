@@ -15,7 +15,8 @@ export default defineNuxtConfig({
     "nuxt-lodash",
     "@nuxt/image",
     "@nuxt/ui",,
-    "@nuxt/content",],
+    "@nuxt/content",
+    "@stefanobartoletti/nuxt-social-share"],
   components: [
     { path: "~/components/common" },
     { path: "~/components/global" },
