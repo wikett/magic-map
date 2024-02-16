@@ -3,9 +3,9 @@ title: El monje en llamas
 description: Creación de un personaje para fotografía nocturna paso a paso por Sergio Valero, grupo fotográfico Modo-M.
 category: como-se-hizo
 published_time: 2013-09-25T10:47:03.917Z
-url: https://www.subexpuesta.com/blog/como-se-hizo/el-monje-en-llamas-por-modo-m
+url: https://main--subexpuesta.netlify.app/blog/como-se-hizo/el-monje-en-llamas-por-modo-m
 created: 25 Sep 2013
-imageUrl: https://www.subexpuesta.com/img/content/el-monje-en-llamas.webp
+imageUrl: https://main--subexpuesta.netlify.app/img/content/el-monje-en-llamas.webp
 url_location: /localizaciones/56052249d0ff10030029b155/el-monje-en-llamas
 author:
     name: Sergio Valero
@@ -14,7 +14,7 @@ author:
     xUrl:
     instagramUrl: https://www.instagram.com/sergio_valero_/
     imageUrl:
-    url: https://www.subexpuesta.com/usuario/valero28/
+    url: https://main--subexpuesta.netlify.app/usuario/valero28/
 
 exif:
     camera: Nikon D7000
@@ -46,23 +46,23 @@ head:
     - name: 'article:author'
       content: 'Sergio Valero'
     - name: 'og:image'
-      content: 'https://www.subexpuesta.com/img/content/el-monje-en-llamas.webp'
+      content: 'https://main--subexpuesta.netlify.app/img/content/el-monje-en-llamas.webp'
     - name: 'og:url'
-      content: 'https://www.subexpuesta.com/blog/como-se-hizo/el-monje-en-llamas-por-modo-m'
+      content: 'https://main--subexpuesta.netlify.app/blog/como-se-hizo/el-monje-en-llamas-por-modo-m'
     - name: 'twitter:domain'
-      content: 'www.subexpuesta.com'
+      content: 'main--subexpuesta.netlify.app'
     - name: 'twitter:url'
-      content: 'https://www.subexpuesta.com/blog/como-se-hizo/el-monje-en-llamas-por-modo-m'
+      content: 'https://main--subexpuesta.netlify.app/blog/como-se-hizo/el-monje-en-llamas-por-modo-m'
     - name: 'twitter:title'
       content: 'El monje en llamas: Cómo se hizo'
     - name: 'twitter:card'
-      content: 'https://www.subexpuesta.com/img/content/el-monje-en-llamas.webp'
+      content: 'https://main--subexpuesta.netlify.app/img/content/el-monje-en-llamas.webp'
     - name: 'twitter:description'
       content: 'Creación de un personaje para fotografía nocturna paso a paso por Sergio Valero, grupo fotográfico Modo-M'
     - name: 'twitter:image'
-      content: 'https://www.subexpuesta.com/img/content/el-monje-en-llamas.webp'
+      content: 'https://main--subexpuesta.netlify.app/img/content/el-monje-en-llamas.webp'
     - name: 'copyright'
-      content: '© 2024 www.subexpuesta.com'
+      content: '© 2024 main--subexpuesta.netlify.app'
 ---
 # El monje en llamas: Cómo se hizo
 Creación de un personaje para fotografía nocturna paso a paso por Sergio Valero, grupo fotográfico Modo-M.
@@ -70,7 +70,7 @@ Creación de un personaje para fotografía nocturna paso a paso por Sergio Valer
 ::photo-article
 ---
 title: Creación de un personaje para fotografía nocturna paso a paso por Sergio Valero
-imageurl: https://www.subexpuesta.com/img/content/el-monje-en-llamas.webp
+imageurl: https://main--subexpuesta.netlify.app/img/content/el-monje-en-llamas.webp
 ---
 ::
 

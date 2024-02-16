@@ -3,9 +3,9 @@ title: Voigtlander 10,5mm f0.95
 description: Análisis del objetivo Voigtlander 10,5mm f0.95 por Joaquinain, con prueba de campo y sensaciones que ofrete este objetivo.
 category: objetivos
 published_time: 2015-11-18T10:47:03.917Z
-url: https://www.subexpuesta.com/blog/objetivos/analisis-objetivo-voigtlander-105mm-f095
+url: https://main--subexpuesta.netlify.app/blog/objetivos/analisis-objetivo-voigtlander-105mm-f095
 created: 18 Nov 2015
-imageUrl: https://www.subexpuesta.com/img/content/Voigtlaender_10_5mm_095.webp
+imageUrl: https://main--subexpuesta.netlify.app/img/content/Voigtlaender_10_5mm_095.webp
 url_location: 
 author:
     name: Joaquín Culiáñez
@@ -14,7 +14,7 @@ author:
     xUrl:
     instagramUrl: https://www.instagram.com/joaquinain/
     imageUrl:
-    url: https://www.subexpuesta.com/usuario/joaquinain/
+    url: https://main--subexpuesta.netlify.app/usuario/joaquinain/
 head:
   meta:
     - name: 'keywords'
@@ -36,23 +36,23 @@ head:
     - name: 'article:author'
       content: 'Joaquinain'
     - name: 'og:image'
-      content: 'https://www.subexpuesta.com/img/content/Voigtlaender_10_5mm_095.webp'
+      content: 'https://main--subexpuesta.netlify.app/img/content/Voigtlaender_10_5mm_095.webp'
     - name: 'og:url'
-      content: 'https://www.subexpuesta.com/blog/objetivos/analisis-objetivo-voigtlander-105mm-f095'
+      content: 'https://main--subexpuesta.netlify.app/blog/objetivos/analisis-objetivo-voigtlander-105mm-f095'
     - name: 'twitter:domain'
-      content: 'www.subexpuesta.com'
+      content: 'main--subexpuesta.netlify.app'
     - name: 'twitter:url'
-      content: 'https://www.subexpuesta.com/blog/objetivos/analisis-objetivo-voigtlander-105mm-f095'
+      content: 'https://main--subexpuesta.netlify.app/blog/objetivos/analisis-objetivo-voigtlander-105mm-f095'
     - name: 'twitter:title'
       content: 'Análisis del objetivo Voigtlander 10,5mm f0.95 por Joaquinain'
     - name: 'twitter:card'
-      content: 'https://www.subexpuesta.com/img/content/Voigtlaender_10_5mm_095.webp'
+      content: 'https://main--subexpuesta.netlify.app/img/content/Voigtlaender_10_5mm_095.webp'
     - name: 'twitter:description'
       content: 'Análisis del objetivo Voigtlander 10,5mm f0.95 por Joaquinain, con prueba de campo y sensaciones que ofrete este objetivo.'
     - name: 'twitter:image'
-      content: 'https://www.subexpuesta.com/img/content/Voigtlaender_10_5mm_095.webp'
+      content: 'https://main--subexpuesta.netlify.app/img/content/Voigtlaender_10_5mm_095.webp'
     - name: 'copyright'
-      content: '© 2024 www.subexpuesta.com'
+      content: '© 2024 main--subexpuesta.netlify.app'
 ---
 # Análisis del objetivo Voigtlander 10,5mm f0.95
 Análisis del objetivo Voigtlander 10,5mm f0.95 por Joaquinain, con prueba de campo y sensaciones que ofrete este objetivo.
@@ -60,14 +60,14 @@ Análisis del objetivo Voigtlander 10,5mm f0.95 por Joaquinain, con prueba de ca
 ::photo-article
 ---
 title: Análisis del objetivo Voigtlander 10,5mm f0.95
-imageurl: https://www.subexpuesta.com/img/content/Voigtlaender_10_5mm_095.webp
+imageurl: https://main--subexpuesta.netlify.app/img/content/Voigtlaender_10_5mm_095.webp
 ---
 ::
 
 ## Introducción
 Recientemente me he comprado un **Voigtlander 10,5mm f0.95** para mi **Olympus EM1**. Suelo hacer muchas tomas nocturnas y tengo un largo catálogo de buenas lentes del sistema m4/3. Cuando sacaron esta valoré otras opciones, pero su máxima apertura y la contrastada calidad de los Voigtlander me hizo decantarme por ella. Era lógico ya que el sistema m4/3 está un poco escaso de lentes angulares o ultra angulares luminosos.
 
-Mi buen amigo Quique me pidió que hiciese un análisis de esta lente para su web [www.subexpuesta.com](http://www.subexpuesta.com) y a ello voy a dedicarme en estas líneas.
+Mi buen amigo Quique me pidió que hiciese un análisis de esta lente para su web [main--subexpuesta.netlify.app](http://main--subexpuesta.netlify.app) y a ello voy a dedicarme en estas líneas.
 
 Que nadie espere test científicos, tablas de resolución, ni nada que se le parezca. En primer lugar porque carezco de tales medios, y en segundo lugar, porque ya han probado concienzudamente esta lente en webs especializadas. Simplemente voy a contar lo que un usuario medio puede encontrar en una lente como esta.
 

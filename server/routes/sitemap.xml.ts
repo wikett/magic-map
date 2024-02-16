@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
   // Fetch all documents
   const docs = await serverQueryContent(event).find()
   const sitemap = new SitemapStream({
-    hostname: 'https://www.subexpuesta.com'
+    hostname: 'https://main--subexpuesta.netlify.app'
   })
 
   for (const doc of docs) {
