@@ -65,7 +65,11 @@
               </h1>
 
               <p class="mt-2 text-sm text-blue-200">
-                por <span class="text-pink-200">{{ loca.autor }}</span> (
+                por
+                <NuxtLink :to="`/usuario/${loca.autor}`"
+                  ><span class="text-pink-200">{{ loca.autor }}</span></NuxtLink
+                >
+                (
                 <time :datetime="loca.fechaToma.$date">{{
                   fechaFotografia
                 }}</time
