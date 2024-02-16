@@ -161,7 +161,7 @@
 
 <script setup>
 import { ref } from "vue";
-import info from "../content/info.json";
+import info from "../data/info.json";
 const redirecting = ref(false);
 const route = useRoute();
 import {

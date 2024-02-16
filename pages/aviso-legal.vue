@@ -285,7 +285,7 @@
   </div>
 </template>
 <script setup>
-import data from "../content/info.json";
+import data from "../data/info.json";
 
 useHead({
   title: "Política de cookies",

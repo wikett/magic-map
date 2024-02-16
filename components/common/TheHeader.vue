@@ -14,7 +14,7 @@
                 src="/subexpuesta/subexpuesta-com-logo.png"
                 width="167"
                 format="webp"
-                class="h-8 w-auto"
+                class="h-12 w-auto"
                 alt="Subexpuesta.com"
               />
             </NuxtLink>
@@ -45,6 +45,31 @@
               <span class="sr-only">View notifications</span>
               <BellIcon class="h-6 w-6" aria-hidden="true" />
             </button> -->
+            <div class="flex space-x-6">
+              <a
+                v-for="item in navigation.social"
+                :key="item.name"
+                :href="item.href"
+                class="text-gray-500 hover:text-gray-400"
+              >
+                <span v-if="item.href !== ''" class="sr-only">{{
+                  item.name
+                }}</span>
+                <!-- <component
+                  v-if="item.href !== ''"
+                  :is="item.icon"
+                  class="h-6 w-6"
+                  aria-hidden="true"
+                /> -->
+                <UAvatar
+                  v-if="item.href !== ''"
+                  :src="`/img/social/${item.icon}`"
+                  :alt="item.name"
+                  class="h-8 w-8"
+                  aria-hidden="true"
+                />
+              </a>
+            </div>
 
             <!-- Profile dropdown -->
             <!-- <Menu as="div" class="relative ml-3">
@@ -137,9 +162,34 @@
           >Blog</DisclosureButton
         >
       </div>
-      <!-- <div class="border-t border-gray-700 pb-3 pt-4">
+      <div class="border-t border-gray-700 pb-3 pt-4">
         <div class="flex items-center px-5">
-          <div class="flex-shrink-0">
+          <div class="flex space-x-6">
+            <a
+              v-for="item in navigation.social"
+              :key="item.name"
+              :href="item.href"
+              class="text-gray-500 hover:text-gray-400"
+            >
+              <span v-if="item.href !== ''" class="sr-only">{{
+                item.name
+              }}</span>
+              <!-- <component
+                v-if="item.href !== ''"
+                :is="item.icon"
+                class="h-6 w-6"
+                aria-hidden="true"
+              /> -->
+              <UAvatar
+                v-if="item.href !== ''"
+                :src="`/img/social/${item.icon}`"
+                :alt="item.name"
+                class="h-8 w-8"
+                aria-hidden="true"
+              />
+            </a>
+          </div>
+          <!-- <div class="flex-shrink-0">
             <img
               class="h-10 w-10 rounded-full"
               src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
@@ -157,9 +207,9 @@
             <span class="absolute -inset-1.5" />
             <span class="sr-only">View notifications</span>
             <BellIcon class="h-6 w-6" aria-hidden="true" />
-          </button>
+          </button> -->
         </div>
-        <div class="mt-3 space-y-1 px-2">
+        <!-- <div class="mt-3 space-y-1 px-2">
           <DisclosureButton
             as="a"
             href="#"
@@ -178,13 +228,14 @@
             class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
             >Sign out</DisclosureButton
           >
-        </div>
-      </div> -->
+        </div> -->
+      </div>
     </DisclosurePanel>
   </Disclosure>
 </template>
 
 <script setup>
+import data from "../../data/info.json";
 import {
   Disclosure,
   DisclosureButton,
@@ -195,4 +246,28 @@ import {
   MenuItems,
 } from "@headlessui/vue";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/vue/24/outline";
+let navigation = {
+  social: [
+    {
+      name: "Facebook",
+      href: data.facebookUrl,
+      icon: "icons8-facebook.svg",
+    },
+    {
+      name: "Instagram",
+      href: data.instagramUrl,
+      icon: "icons8-instagram.svg",
+    },
+    {
+      name: "Twitter",
+      href: data.xUrl,
+      icon: "icons8-twitterx.svg",
+    },
+    {
+      name: "Telegram",
+      href: data.telegramUrl,
+      icon: "icons8-telegram-app.svg",
+    },
+  ],
+};
 </script>

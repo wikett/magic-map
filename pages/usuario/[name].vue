@@ -293,7 +293,7 @@
 <script setup>
 import { format } from "date-fns";
 const { convertSEO, getId } = seoUtils();
-import usuario from "../../content/usuarios.json";
+import usuario from "../../data/usuarios.json";
 import "vue-leaflet-markercluster/dist/style.css";
 import { LMap, LTileLayer, LMarker, LTooltip } from "@vue-leaflet/vue-leaflet";
 import { LMarkerClusterGroup } from "vue-leaflet-markercluster";

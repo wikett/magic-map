@@ -82,7 +82,7 @@
 
 <script setup>
 import { defineComponent, h } from "vue";
-import data from "../../content/info.json";
+import data from "../../data/info.json";
 const articles = await useAsyncData("home", () =>
   queryContent("/")
     .where({ title: { $ne: "Astroingeo Blog" } })

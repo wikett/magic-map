@@ -68,7 +68,7 @@
 </template>
 
 <script setup>
-import data from "../../content/info.json";
+import data from "../../data/info.json";
 
 let navigation = {
   social: [
