@@ -1,14 +1,14 @@
 <template>
-  <div class="relative py-16 overflow-hidden bg-white">
+  <div class="relative py-16 overflow-hidden">
     <div class="relative px-4 sm:px-6 lg:px-8">
       <div class="mx-auto mb-6 text-lg max-w-prose">
         <h1
-          class="mt-2 mb-8 text-3xl font-extrabold leading-8 tracking-tight text-center text-gray-900 sm:text-4xl sm:leading-10"
+          class="mt-2 mb-8 text-3xl font-extrabold leading-8 tracking-tight text-center sm:text-4xl sm:leading-10"
         >
           Política de privacidad
         </h1>
       </div>
-      <div class="mx-auto prose prose-lg text-gray-900">
+      <div class="mx-auto text-blue-200">
         <p><strong>POL&Iacute;TICA DE PRIVACIDAD</strong></p>
         <p>
           Si est&aacute;s aqu&iacute; es porque quieres saber m&aacute;s sobre

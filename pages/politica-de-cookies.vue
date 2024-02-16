@@ -2,12 +2,12 @@
   <div>
     <div class="mx-auto mb-6 text-lg max-w-prose">
       <h1
-        class="mt-2 mb-8 text-3xl font-extrabold leading-8 tracking-tight text-center text-gray-900 sm:text-4xl sm:leading-10"
+        class="mt-2 mb-8 text-3xl font-extrabold leading-8 tracking-tight text-center sm:text-4xl sm:leading-10"
       >
         Política de cookies
       </h1>
     </div>
-    <div class="mx-auto prose prose-lg text-gray-900">
+    <div class="mx-auto text-blue-200">
       <p><strong>POLITICA DE COOKIES</strong></p>
       <p>
         Si quieres saber m&aacute;s sobre el uso de cookies que realiza este

@@ -11,17 +11,14 @@
       >
         <!-- Product image -->
         <div class="lg:col-span-4 lg:row-end-1">
-          <div
-            class="aspect-h-3 aspect-w-4 overflow-hidden rounded-lg bg-gray-100"
-          >
+          <div class="aspect-h-3 aspect-w-4 overflow-hidden rounded-lg">
             <NuxtImg
               provider="cloudinary"
               :src="`/${loca.cloudinaryId}.jpg`"
               :alt="loca.titulo"
               width="592"
-              height="423"
               format="webp"
-              class="object-cover object-center"
+              class="object-contain"
             />
           </div>
           <div
@@ -102,12 +99,19 @@
             >
               Ver en grande
             </button>
-            <button
+            <!-- <button
               type="button"
               class="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-50 px-8 py-3 text-base font-medium text-blue-700 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-50"
             >
               <a href="/mapa-localizaciones">Volver al mapa</a>
-            </button>
+            </button> -->
+            <UButton
+              to="/mapa-localizaciones"
+              class="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-50 px-8 py-3 text-base font-medium text-blue-700 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+              :loading="redirecting"
+              @click="redirecting = true"
+              >Ver mapa</UButton
+            >
           </div>
 
           <div class="mt-10 border-t border-blue-200 pt-10">
@@ -205,6 +209,7 @@ import { format } from "date-fns";
 const isOpen = ref(false);
 const route = useRoute();
 import { LMap, LTileLayer, LMarker, LTooltip } from "@vue-leaflet/vue-leaflet";
+const redirecting = ref(false);
 //  const mapRef = useMapboxRef("map1");
 
 // useHead({

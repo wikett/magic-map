@@ -2,13 +2,13 @@
   <div>
     <div class="mx-auto mb-6 text-lg max-w-prose">
       <h1
-        class="mt-2 mb-8 text-3xl font-extrabold leading-8 tracking-tight text-center text-gray-900 sm:text-4xl sm:leading-10"
+        class="mt-2 mb-8 text-3xl font-extrabold leading-8 tracking-tight text-center sm:text-4xl sm:leading-10"
       >
-        Avviso legale
+        Aviso legal
       </h1>
     </div>
-    <div class="mx-auto prose prose-lg text-gray-900">
-      <p><strong>AVVISO LEGALE</strong></p>
+    <div class="mx-auto text-blue-200">
+      <p><strong>AVISO LEGAL</strong></p>
       <p>
         Este Aviso Legal tiene el objetivo de informarte de tus derechos y
         obligaciones como usuario de este sitio web. Aqu&iacute;

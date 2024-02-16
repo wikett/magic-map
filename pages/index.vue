@@ -90,7 +90,13 @@
               fotografía.
             </p>
             <div class="mt-10 flex items-center justify-center gap-x-6">
-              <UButton to="/mapa-localizaciones" size="xl">Ver mapa</UButton>
+              <UButton
+                to="/mapa-localizaciones"
+                size="xl"
+                :loading="redirecting"
+                @click="redirecting = true"
+                >Ver mapa</UButton
+              >
             </div>
           </div>
         </div>
@@ -149,14 +155,18 @@
             <div
               class="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end"
             >
-              <NuxtImg
-                provider="cloudinary"
-                src="/subexpuesta/bhw1yyupkfqbm9yljd2v.jpg"
-                width="592"
-                height="423"
-                format="webp"
-                class="rounded-2x object-cover"
-              />
+              <NuxtLink
+                to="/localizaciones/5a0cde2a411b6a0400d61517/faro-de-kermovan"
+              >
+                <NuxtImg
+                  provider="cloudinary"
+                  src="/subexpuesta/bhw1yyupkfqbm9yljd2v.jpg"
+                  width="592"
+                  height="423"
+                  format="webp"
+                  class="rounded-2x object-cover"
+                />
+              </NuxtLink>
             </div>
             <div
               class="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8"
@@ -164,38 +174,50 @@
               <div
                 class="order-first flex w-64 flex-none justify-end self-end lg:w-auto"
               >
-                <NuxtImg
-                  provider="cloudinary"
-                  src="/subexpuesta/apdpulgcwucmdljwh9iw.jpg"
-                  width="384"
-                  height="288"
-                  format="webp"
-                  class="pl-32 aspect-[4/3] w-[24rem] max-w-none flex-none rounded-2xl bg-gray-50 object-fill overflow-hidden"
-                />
+                <NuxtLink
+                  to="/localizaciones/56395bf37fff9703004e30f5/ovillo-de-paja"
+                >
+                  <NuxtImg
+                    provider="cloudinary"
+                    src="subexpuesta/syppuylouapekavlldua"
+                    width="384"
+                    height="288"
+                    format="webp"
+                    class="pl-32 aspect-[4/3] w-[24rem] max-w-none flex-none rounded-2xl object-fill overflow-hidden"
+                  />
+                </NuxtLink>
               </div>
               <div
                 class="flex w-96 flex-auto justify-end lg:w-auto lg:flex-none"
               >
-                <NuxtImg
-                  provider="cloudinary"
-                  src="/subexpuesta/zc3zex6s2g2wyrrd36a7.jpg"
-                  width="592"
-                  height="422"
-                  format="webp"
-                  class="aspect-[7/5] w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
-                />
+                <NuxtLink
+                  to="/localizaciones/57a7273136517003009405db/castillo-del-berrueco"
+                >
+                  <NuxtImg
+                    provider="cloudinary"
+                    src="/subexpuesta/zc3zex6s2g2wyrrd36a7.jpg"
+                    width="592"
+                    height="422"
+                    format="webp"
+                    class="aspect-[7/5] w-[37rem] max-w-none flex-none rounded-2xl object-cover"
+                  />
+                </NuxtLink>
               </div>
               <div
                 class="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none"
               >
-                <NuxtImg
-                  provider="cloudinary"
-                  src="/subexpuesta/vet0ts4czghsvymntgkj.jpg"
-                  width="539"
-                  height="700"
-                  format="webp"
-                  class="aspect-[3/4] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover"
-                />
+                <NuxtLink
+                  to="/localizaciones/567476e56f37740300225c97/nothern-driving"
+                >
+                  <NuxtImg
+                    provider="cloudinary"
+                    src="/subexpuesta/vet0ts4czghsvymntgkj.jpg"
+                    width="539"
+                    height="700"
+                    format="webp"
+                    class="aspect-[3/4] w-[24rem] max-w-none rounded-2xl object-cover"
+                  />
+                </NuxtLink>
               </div>
             </div>
           </div>
@@ -205,9 +227,7 @@
   </main>
 </template>
 <script setup>
-import { Dialog, DialogPanel } from "@headlessui/vue";
-import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
-
+const redirecting = ref(false);
 const navigation = [
   { name: "Product", href: "#" },
   { name: "Features", href: "#" },

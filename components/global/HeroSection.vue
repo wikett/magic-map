@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-white">
+  <div class="">
     <div class="relative">
       <div class="mx-auto max-w-7xl">
         <div class="relative z-10 pt-14 lg:w-full lg:max-w-2xl">
           <svg
-            class="absolute inset-y-0 right-8 hidden h-full w-80 translate-x-1/2 transform fill-white lg:block"
+            class="absolute inset-y-0 right-8 hidden h-full w-80 translate-x-1/2 transform fill-gray-800 lg:block"
             viewBox="0 0 100 100"
             preserveAspectRatio="none"
             aria-hidden="true"
@@ -16,12 +16,12 @@
             <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
               <div class="hidden sm:mb-10 sm:flex">
                 <div
-                  class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
+                  class="relative rounded-full px-3 py-1 text-sm leading-6 text-blue-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
                 >
                   Con cualquier duda o consulta, utiliza nuestro formulario de
                   <a
                     href="/contacto"
-                    class="whitespace-nowrap font-semibold text-indigo-600"
+                    class="whitespace-nowrap font-semibold text-blue-600"
                     ><span
                       class="absolute inset-0"
                       aria-hidden="true"
@@ -29,19 +29,45 @@
                   >
                 </div>
               </div>
-              <h1
-                class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
-              >
+              <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
                 {{ data.author }}
               </h1>
-              <div v-html="data.authorsDescription"></div>
+              <p>
+                ¡Bienvenidos a un nuevo viaje visual bajo la luna y las
+                estrellas! Mi nombre es <strong>Quique Aparicio</strong> y tengo
+                el placer de presentarles mi último emprendimiento: un blog
+                completamente dedicado al mágico y a veces misterioso, mundo de
+                la fotografía nocturna.
+              </p>
+              <p>
+                Cae la noche y mientras la mayoría de las personas se preparan
+                para descansar, los amantes de la fotografía nocturna abrimos
+                nuestros ojos y encendemos <strong>nuestras cámaras</strong>. La
+                oscuridad del cielo se convierte en nuestro lienzo y cada fuente
+                de luz, ya sea una lámpara de la calle o el brillo de la vía
+                láctea, se convierte en nuestra paleta de colores.
+              </p>
+              <p>
+                Ya seas un experto fotógrafo buscando nuevas ideas y técnicas,
+                un principiante en busca de inspiración y guía, o simplemente un
+                entusiasta interesado en el arte y la belleza de la fotografía
+                nocturna, este blog es para ti. Espero que disfruten de esta
+                aventura tanto como yo disfruto cada noche bajo las estrellas y
+                los destellos de luz, capturando el encanto inexplorado de la
+                noche. Juntos descubriremos que, incluso en la más profunda
+                oscuridad, siempre hay una imagen esperando a ser capturada.
+              </p>
+              <p>
+                ¡Así que prepara tu cámara y únete a mí en este viaje nocturno!
+              </p>
+
               <div class="mt-10 flex items-center gap-x-6">
                 <div class="flex space-x-6">
                   <a
                     v-for="item in navigation.social"
                     :key="item.name"
                     :href="item.href"
-                    class="text-gray-500 hover:text-gray-400"
+                    class="text-blue-500 hover:text-gray-400"
                   >
                     <span class="sr-only">{{ item.name }}</span>
                     <component
@@ -56,11 +82,17 @@
           </div>
         </div>
       </div>
-      <div class="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <img
+      <div class="bg-gray-800 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+        <!-- <img
           class="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full"
           src="/img/autor.webp"
           :alt="data.author"
+        /> -->
+        <NuxtImg
+          provider="cloudinary"
+          src="subexpuesta/quique_aparicio.jpg"
+          format="webp"
+          class="object-cover lg:aspect-auto lg:h-full lg:w-full"
         />
       </div>
     </div>
@@ -74,7 +106,7 @@ let navigation = {
   social: [
     {
       name: "Facebook",
-      href: data.facebookUrl,
+      href: "https://www.facebook.com/qaparicio",
       icon: defineComponent({
         render: () =>
           h("svg", { fill: "currentColor", viewBox: "0 0 24 24" }, [
@@ -88,7 +120,7 @@ let navigation = {
     },
     {
       name: "Instagram",
-      href: data.instagramUrl,
+      href: "https://www.instagram.com/quique_aparicio/",
       icon: defineComponent({
         render: () =>
           h("svg", { fill: "currentColor", viewBox: "0 0 24 24" }, [
@@ -102,7 +134,7 @@ let navigation = {
     },
     {
       name: "Twitter",
-      href: data.xUrl,
+      href: "https://twitter.com/eac9",
       icon: defineComponent({
         render: () =>
           h("svg", { fill: "currentColor", viewBox: "0 0 24 24" }, [

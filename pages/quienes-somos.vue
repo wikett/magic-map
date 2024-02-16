@@ -1,12 +1,11 @@
 <template>
-  <div class="bg-white">  
+  <div class="">
     <main class="isolate">
-        <hero-section />
-      </main>
-    </div>
-  </template>
-  
-  <script setup>
-  import { defineComponent, h } from 'vue'
-  
-  </script>
+      <hero-section />
+    </main>
+  </div>
+</template>
+
+<script setup>
+import { defineComponent, h } from "vue";
+</script>
