@@ -10,28 +10,31 @@
         <div class="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
           <div class="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-56 lg:pt-48 xl:col-span-6">
             <div class="mx-auto max-w-2xl lg:mx-0">
-              <img class="h-11" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
+              <a href="/"><img class="h-11" src="https://res.cloudinary.com/djhqderty/image/upload/f_webp,q_auto,w_167/subexpuesta/subexpuesta-com-logo.png" alt="Subexpuesta.com"></a>
               <div class="hidden sm:mt-32 sm:flex lg:mt-16">
                 <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                  Estamos en contacto <a href="#" class="whitespace-nowrap font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+                  ¿Estamos listos? <a href="/" class="whitespace-nowrap font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Volver a la home <span aria-hidden="true">&rarr;</span></a>
                 </div>
               </div>
               <h1 class="mt-24 text-4xl font-bold tracking-tight text-gray-900 sm:mt-10 sm:text-6xl">Contacta con nosotros</h1>
               <p class="mt-6 text-lg leading-8 text-gray-600">Cualquier duda o cuestión no dudes en ponerte en contacto con nosotros</p>
               <div class="mt-10 flex items-center gap-x-6">
                 <form name="contact" method="POST" netlify>
-                    <p>
-                      <label>Tu nombre: <input type="text" name="name" /></label>
-                    </p>
-                    <p>
-                      <label>tu email: <input type="email" name="email" /></label>
-                    </p>
-                    <p>
-                      <label>Mensaje: <textarea name="message"></textarea></label>
-                    </p>
-                    <p>
-                      <button type="submit">Enviar</button>
-                    </p>
+                    <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Email</label>
+                    <div class="mt-2">
+                        <input type="text" name="name" id="name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="you@example.com">
+                    </div>
+                    <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email</label>
+                    <div class="mt-2">
+                        <input type="email" name="email" id="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="you@example.com">
+                    </div>
+
+                    <label for="message" class="block text-sm font-medium leading-6 text-gray-900">Escribe tu mensaje</label>
+                    <div class="mt-2">
+                        <textarea rows="4" name="message" id="message" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="rounded-md bg-indigo-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Enviar</button>
                   </form>
               </div>
             </div>
