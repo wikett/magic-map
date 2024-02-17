@@ -159,7 +159,10 @@
             </ClientOnly>
           </div>
         </div>
-        <div class="mt-16 grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
+        <div
+          v-if="localizaciones.length > 0"
+          class="mt-16 grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3"
+        >
           <div
             v-for="incentive in incentives"
             :key="incentive.name"
@@ -179,6 +182,7 @@
           </div>
         </div>
         <ul
+          v-if="localizaciones.length > 0"
           role="list"
           class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
         >
@@ -205,6 +209,9 @@
             </p>
           </li>
         </ul>
+        <p v-else class="text-red-400">
+          Todovía no tenemos localizaciones para este usuario
+        </p>
       </div>
     </div>
   </div>
@@ -312,31 +319,38 @@ import {
 import { XMarkIcon } from "@heroicons/vue/24/outline";
 
 const route = useRoute();
+let incentives = [];
+let fullCloudinary =
+  "https://images.unsplash.com/photo-1524135220673-c731600a1a50?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 const localizaciones = await queryContent(`/localizaciones`)
   .where({ autor: { $eq: route.params.name } })
   .find();
 const currentUsuario = usuario.find(
   (item) => item.username === route.params.name
 );
-const incentives = [
-  {
-    name: "Localizaciones",
-    icon: "i-heroicons-map-pin",
-    description: `${localizaciones.length} localizaciones en total`,
-  },
-  {
-    name: "Última localización",
-    icon: "i-heroicons-rocket-launch",
-    description: `La última localización de ${route.params.name} fue en ${
-      localizaciones[localizaciones.length - 1].ciudad
-    } (${localizaciones[localizaciones.length - 1].provincia})`,
-  },
-  {
-    name: "Antigüedad",
-    icon: "i-heroicons-calendar",
-    description: getUserCreatedAt(),
-  },
-];
+if (localizaciones.length > 0) {
+  fullCloudinary = `https://res.cloudinary.com/djhqderty/image/upload/c_scale,f_auto,q_80,w_1024/${localizaciones[0].cloudinaryId}.jpg`;
+  incentives = [
+    {
+      name: "Localizaciones",
+      icon: "i-heroicons-map-pin",
+      description: `${localizaciones.length} localizaciones en total`,
+    },
+    {
+      name: "Última localización",
+      icon: "i-heroicons-rocket-launch",
+      description: `La última localización de ${route.params.name} fue en ${
+        localizaciones[localizaciones.length - 1].ciudad
+      } (${localizaciones[localizaciones.length - 1].provincia})`,
+    },
+    {
+      name: "Antigüedad",
+      icon: "i-heroicons-calendar",
+      description: getUserCreatedAt(),
+    },
+  ];
+}
+
 function showLoca(loca) {
   locaSelected.value = loca;
   open.value = !open.value;
@@ -354,8 +368,8 @@ function getUserCreatedAt() {
 }
 
 const metaTitle = `${currentUsuario.username}`;
-const metaDescription = `📷 ${localizaciones.length} localizaciones de fotografía. ${currentUsuario.description}`;
-const fullCloudinary = `https://res.cloudinary.com/djhqderty/image/upload/c_scale,f_auto,q_80,w_1024/${localizaciones[0].cloudinaryId}.jpg`;
+const userDescription = currentUsuario.description ?? "";
+const metaDescription = `📷 ${localizaciones.length} localizaciones de fotografía. ${userDescription}`;
 
 useHead({
   title: metaTitle,

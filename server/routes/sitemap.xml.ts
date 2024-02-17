@@ -1,5 +1,6 @@
 import { serverQueryContent } from '#content/server'
 import { SitemapStream, streamToPromise } from 'sitemap'
+import usuarios from '../../data/usuarios.json'
 
 export default defineEventHandler(async (event) => {
   const convertSEO = (keyword: string) => {
@@ -40,13 +41,14 @@ export default defineEventHandler(async (event) => {
             .replace(/^\s+|\s+$/g, '') + ''
         ).toLowerCase()
       ) // trim leading/trailing spaces
-  };
+  }
+  console.log('usuario 1');
+  console.log(usuarios[0])
   // Fetch all documents
   const docs = await serverQueryContent(event).find()
   const sitemap = new SitemapStream({
     hostname: 'https://main--subexpuesta.netlify.app'
   })
-
   for (const doc of docs) {    
     const isLoca = doc._path?.includes('localizaciones')
     let titulo = ""
@@ -57,6 +59,13 @@ export default defineEventHandler(async (event) => {
       tituloSEO = convertSEO(titulo)
       urlSitemap += "/"+tituloSEO
     }
+    sitemap.write({
+      url: urlSitemap
+    })
+  }
+  for (const usuario of usuarios) {    
+    let urlSitemap = "/usuario/"+usuario.username
+    
     sitemap.write({
       url: urlSitemap
     })
