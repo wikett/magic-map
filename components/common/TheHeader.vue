@@ -50,6 +50,7 @@
                 v-for="item in navigation.social"
                 :key="item.name"
                 :href="item.href"
+                target="_blank"
                 class="text-gray-500 hover:text-gray-400"
               >
                 <span v-if="item.href !== ''" class="sr-only">{{

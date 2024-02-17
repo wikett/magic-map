@@ -190,11 +190,9 @@ const locaSelected = ref({});
 const localizaciones = await queryContent(`/localizaciones`).find();
 
 function showLoca(loca) {
+  redirecting.vale = false;
   locaSelected.value = loca;
   open.value = !open.value;
-  if (open.value) {
-    redirecting.vale = false;
-  }
 }
 const features = [
   {
