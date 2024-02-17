@@ -3,9 +3,9 @@ title: Voigtlander 10,5mm f0.95
 description: Análisis del objetivo Voigtlander 10,5mm f0.95 por Joaquinain, con prueba de campo y sensaciones que ofrete este objetivo.
 category: objetivos
 published_time: 2015-11-18T10:47:03.917Z
-url: https://main--subexpuesta.netlify.app/blog/objetivos/analisis-objetivo-voigtlander-105mm-f095
+url: https://www.subexpuesta.com/blog/objetivos/analisis-objetivo-voigtlander-105mm-f095
 created: 18 Nov 2015
-imageUrl: https://main--subexpuesta.netlify.app/img/content/Voigtlaender_10_5mm_095.webp
+imageUrl: https://www.subexpuesta.com/img/content/Voigtlaender_10_5mm_095.webp
 url_location: 
 author:
     name: Joaquín Culiáñez
@@ -14,7 +14,7 @@ author:
     xUrl:
     instagramUrl: https://www.instagram.com/joaquinain/
     imageUrl:
-    url: https://main--subexpuesta.netlify.app/usuario/joaquinain/
+    url: https://www.subexpuesta.com/usuario/joaquinain/
 head:
   meta:
     - name: 'keywords'
@@ -36,21 +36,21 @@ head:
     - name: 'article:author'
       content: 'Joaquinain'
     - name: 'og:image'
-      content: 'https://main--subexpuesta.netlify.app/img/content/Voigtlaender_10_5mm_095.webp'
+      content: 'https://www.subexpuesta.com/img/content/Voigtlaender_10_5mm_095.webp'
     - name: 'og:url'
-      content: 'https://main--subexpuesta.netlify.app/blog/objetivos/analisis-objetivo-voigtlander-105mm-f095'
+      content: 'https://www.subexpuesta.com/blog/objetivos/analisis-objetivo-voigtlander-105mm-f095'
     - name: 'twitter:domain'
       content: 'main--subexpuesta.netlify.app'
     - name: 'twitter:url'
-      content: 'https://main--subexpuesta.netlify.app/blog/objetivos/analisis-objetivo-voigtlander-105mm-f095'
+      content: 'https://www.subexpuesta.com/blog/objetivos/analisis-objetivo-voigtlander-105mm-f095'
     - name: 'twitter:title'
       content: 'Análisis del objetivo Voigtlander 10,5mm f0.95 por Joaquinain'
     - name: 'twitter:card'
-      content: 'https://main--subexpuesta.netlify.app/img/content/Voigtlaender_10_5mm_095.webp'
+      content: 'https://www.subexpuesta.com/img/content/Voigtlaender_10_5mm_095.webp'
     - name: 'twitter:description'
       content: 'Análisis del objetivo Voigtlander 10,5mm f0.95 por Joaquinain, con prueba de campo y sensaciones que ofrete este objetivo.'
     - name: 'twitter:image'
-      content: 'https://main--subexpuesta.netlify.app/img/content/Voigtlaender_10_5mm_095.webp'
+      content: 'https://www.subexpuesta.com/img/content/Voigtlaender_10_5mm_095.webp'
     - name: 'copyright'
       content: '© 2024 main--subexpuesta.netlify.app'
 ---
@@ -60,7 +60,7 @@ Análisis del objetivo Voigtlander 10,5mm f0.95 por Joaquinain, con prueba de ca
 ::photo-article
 ---
 title: Análisis del objetivo Voigtlander 10,5mm f0.95
-imageurl: https://main--subexpuesta.netlify.app/img/content/Voigtlaender_10_5mm_095.webp
+imageurl: https://www.subexpuesta.com/img/content/Voigtlaender_10_5mm_095.webp
 ---
 ::
 

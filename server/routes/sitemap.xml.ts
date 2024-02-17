@@ -47,7 +47,7 @@ export default defineEventHandler(async (event) => {
   // Fetch all documents
   const docs = await serverQueryContent(event).find()
   const sitemap = new SitemapStream({
-    hostname: 'https://main--subexpuesta.netlify.app'
+    hostname: 'https://www.subexpuesta.com'
   })
   for (const doc of docs) {    
     const isLoca = doc._path?.includes('localizaciones')

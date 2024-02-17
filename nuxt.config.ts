@@ -36,7 +36,7 @@ export default defineNuxtConfig({
     },
   },
   site: {
-    url: "https://main--subexpuesta.netlify.app",
+    url: "https://www.subexpuesta.com",
   },
   app: {
     head: {
