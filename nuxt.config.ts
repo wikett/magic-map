@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   routeRules: {
     "/**": { isr: true },
-    "/contacto": {isr: false},
     "/api/**": { isr: false },
   },
   nitro: {
