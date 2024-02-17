@@ -206,21 +206,11 @@
 
 <script setup>
 import { format } from "date-fns";
+import info from "../data/info.json";
 const isOpen = ref(false);
 const route = useRoute();
 import { LMap, LTileLayer, LMarker, LTooltip } from "@vue-leaflet/vue-leaflet";
 const redirecting = ref(false);
-//  const mapRef = useMapboxRef("map1");
-
-// useHead({
-//   title: data.value.Title,
-//   meta: [
-//     { name: "description", content: data.value.Plot },
-//     { property: "og:description", content: data.value.Plot },
-//     { property: "og:image", content: data.value.Poster },
-//     { name: "twitter:card", content: `summary_large_image` },
-//   ],
-// });
 
 const loca = await queryContent(`/localizaciones/${route.params.id}`).findOne();
 
@@ -231,6 +221,50 @@ const peligrosidad = Number.parseInt(loca.peligrosidad) * 10;
 function getMapsUrl() {
   return `https://www.google.es/maps/@${loca.latitud},${loca.longitud},15z`;
 }
+
+const metaDescription = `📷 Localización fotográfica: ${loca.titulo} por ${loca.autor}. Contaminación lumnínica: ${loca.contaminacionLuminica} / 10 Peligrosidad de la zona: ${loca.peligrosidad} / 10`;
+const fullCloudinary = `https://res.cloudinary.com/djhqderty/image/upload/c_scale,f_auto,q_80,w_1024/${loca.cloudinaryId}.jpg`;
+useHead({
+  title: `${loca.titulo}`,
+  meta: [
+    { name: "description", content: metaDescription },
+    { property: "fb:app_id", content: "1508658239428785" },
+    { property: "og:title", content: loca.titulo },
+    { property: "og:description", content: metaDescription },
+    { property: "og:image", content: fullCloudinary },
+    { property: "og:type", content: "website" },
+    { property: "og:locale", content: "es_ES" },
+    { property: "og:site_name", content: "Subexpuesta.com" },
+    { property: "og:url", content: `https://${loca.domain}${route.path}` },
+    { name: "twitter:card", content: metaDescription },
+    { name: "twitter:site", content: "@subexpuesta_com" },
+    { name: "twitter:image", content: fullCloudinary },
+    { name: "twitter:title", content: loca.titulo },
+    { name: "twitter:description", content: metaDescription },
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: `https://${info.domain}${route.path}`,
+    },
+  ],
+});
+
+useJsonld([
+  {
+    "@context": "https://schema.org/",
+    "@type": "ImageObject",
+    contentUrl: fullCloudinary,
+    license: "https://creativecommons.org/licenses/by-nc/4.0/",
+    acquireLicensePage: "https://creativecommons.org/licenses/by-nc/4.0/",
+    creditText: loca.autor,
+    creator: {
+      "@type": "Person",
+      name: loca.autor,
+    },
+    copyrightNotice: loca.autor,
+  },
+]);
 
 const product = {
   name: "Application UI Icon Pack",

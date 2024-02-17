@@ -28,20 +28,20 @@ const props = defineProps({
   },
   tag: {
     type: String,
-    default: 'div',
+    default: "div",
   },
   type: {
     type: String,
-    default: 'in-article',
+    default: "in-article",
   },
 });
-console.log(isShow);
+
 if (isShow) {
   useHead({
     script: {
-      src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5731349288066148',
+      src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5731349288066148",
       async: true,
-      crossorigin: 'anonymous',
+      crossorigin: "anonymous",
     },
   });
 }

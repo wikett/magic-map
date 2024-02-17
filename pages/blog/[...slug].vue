@@ -76,6 +76,82 @@ let navigation = {
 };
 let autorRandom = Math.floor(Math.random() * 6 + 1);
 const autorPicture = `/img/autor288_${autorRandom}.webp`;
+
+const metaTitle = `${page.value?.title}`;
+const metaDescription = page.value?.description;
+const fullCloudinary = page.value?.imageUrl;
+useHead({
+  title: `${metaTitle}`,
+  meta: [
+    { name: "description", content: metaDescription },
+    { property: "fb:app_id", content: "1508658239428785" },
+    { property: "og:title", content: metaTitle },
+    { property: "og:description", content: metaDescription },
+    { property: "og:image", content: fullCloudinary },
+    { property: "og:type", content: "website" },
+    { property: "og:locale", content: "es_ES" },
+    { property: "og:site_name", content: "Subexpuesta.com" },
+    { property: "og:url", content: `https://${info.domain}${route.path}` },
+    { name: "twitter:card", content: metaDescription },
+    { name: "twitter:site", content: "@subexpuesta_com" },
+    { name: "twitter:image", content: fullCloudinary },
+    { name: "twitter:title", content: metaTitle },
+    { name: "twitter:description", content: metaDescription },
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: `https://${info.domain}${route.path}`,
+    },
+  ],
+});
+
+useJsonld([
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: metaTitle,
+    image: {
+      "@type": "ImageObject",
+      url: fullCloudinary,
+      width: "1024",
+    },
+    author: {
+      "@type": "Person",
+      name: `${page.value?.author.name}`,
+      url: `https://${info.domain}/quienes-somos`,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: `${info.domain}`,
+      logo: {
+        "@type": "ImageObject",
+        url: `https://${info.domain}/img/logo.webp`,
+        width: "600",
+        height: "200",
+      },
+    },
+    datePublished: page.value.published_time,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: metaTitle,
+    image: {
+      "@type": "ImageObject",
+      url: fullCloudinary,
+      width: "1024",
+      height: "1024",
+    },
+    datePublished: page.value.published_time,
+    dateModified: page.value.published_time,
+    author: {
+      "@type": "Person",
+      name: `${page.value?.author.name}`,
+      url: `https://${info.domain}/quienes-somos}`,
+    },
+  },
+]);
 </script>
 <template>
   <main class="px-6 py-8 lg:px-8">

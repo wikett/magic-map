@@ -297,6 +297,7 @@ import usuario from "../../data/usuarios.json";
 import "vue-leaflet-markercluster/dist/style.css";
 import { LMap, LTileLayer, LMarker, LTooltip } from "@vue-leaflet/vue-leaflet";
 import { LMarkerClusterGroup } from "vue-leaflet-markercluster";
+import info from "../data/info.json";
 const locaSelected = ref({});
 const open = ref(false);
 const redirecting = ref(false);
@@ -317,7 +318,6 @@ const localizaciones = await queryContent(`/localizaciones`)
 const currentUsuario = usuario.find(
   (item) => item.username === route.params.name
 );
-console.log(localizaciones[0]);
 const incentives = [
   {
     name: "Localizaciones",
@@ -352,4 +352,34 @@ function getUserCreatedAt() {
       )}`
     : "No sabemos la antigüedad de este usuario";
 }
+
+const metaTitle = `${currentUsuario.username}`;
+const metaDescription = `📷 ${localizaciones.length} localizaciones de fotografía. ${currentUsuario.description}`;
+const fullCloudinary = `https://res.cloudinary.com/djhqderty/image/upload/c_scale,f_auto,q_80,w_1024/${localizaciones[0].cloudinaryId}.jpg`;
+
+useHead({
+  title: metaTitle,
+  meta: [
+    { name: "description", content: metaDescription },
+    { property: "fb:app_id", content: "1508658239428785" },
+    { property: "og:title", content: metaTitle },
+    { property: "og:description", content: metaDescription },
+    { property: "og:image", content: fullCloudinary },
+    { property: "og:type", content: "website" },
+    { property: "og:locale", content: "es_ES" },
+    { property: "og:site_name", content: "Subexpuesta.com" },
+    { property: "og:url", content: `https://${info.domain}${route.path}` },
+    { name: "twitter:card", content: metaDescription },
+    { name: "twitter:site", content: "@subexpuesta_com" },
+    { name: "twitter:image", content: fullCloudinary },
+    { name: "twitter:title", content: metaTitle },
+    { name: "twitter:description", content: metaDescription },
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: `https://${info.domain}${route.path}`,
+    },
+  ],
+});
 </script>

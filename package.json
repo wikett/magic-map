@@ -26,6 +26,7 @@
     "@stefanobartoletti/nuxt-social-share": "^0.5.2",
     "@vue-leaflet/vue-leaflet": "^0.10.1",
     "leaflet": "^1.9.4",
+    "nuxt-jsonld": "^2.0.8",
     "sitemap": "^7.1.1",
     "vue-leaflet-markercluster": "^0.5.1"
   }

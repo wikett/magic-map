@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   routeRules: {
     "/**": { isr: true },
-    "/contacto": {prerender: true},
+    "/contacto": {isr: false},
     "/api/**": { isr: false },
   },
   nitro: {
@@ -14,8 +14,9 @@ export default defineNuxtConfig({
   modules: [
     "@pinia/nuxt",
     "nuxt-lodash",
+    "nuxt-jsonld",
     "@nuxt/image",
-    "@nuxt/ui",,
+    "@nuxt/ui",
     "@nuxt/content",
     "@stefanobartoletti/nuxt-social-share"],
   components: [
