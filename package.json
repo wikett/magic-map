@@ -23,10 +23,18 @@
     "@nuxt/image": "^1.3.0",
     "@nuxt/ui": "^2.13.0",
     "@pinia/nuxt": "^0.5.1",
+    "@sindresorhus/slugify": "^2.2.1",
     "@stefanobartoletti/nuxt-social-share": "^0.5.2",
     "@vue-leaflet/vue-leaflet": "^0.10.1",
+    "axios": "^1.6.7",
+    "deepl-node": "^1.11.1",
+    "dotenv": "^16.4.4",
+    "fs.promises": "^0.1.2",
     "leaflet": "^1.9.4",
     "nuxt-jsonld": "^2.0.8",
+    "openai": "^4.28.0",
+    "path": "^0.12.7",
+    "sharp": "^0.33.2",
     "sitemap": "^7.1.1",
     "vue-leaflet-markercluster": "^0.5.1"
   }

@@ -165,7 +165,6 @@ useJsonld([
               <div
                 class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10"
               >
-                HOLA
                 <TransitionChild
                   as="template"
                   enter="transform transition ease-in-out duration-500 sm:duration-700"
@@ -255,7 +254,9 @@ useJsonld([
             <span class="bg-gray-800 px-2 text-sm text-pink-500">Autor</span>
           </div>
         </div>
-        <figure class="">
+        <figure
+          class="grid grid-cols-1 items-center gap-x-6 gap-y-8 lg:gap-x-10"
+        >
           <div
             v-if="page.author.user === 'quique_aparicio'"
             class="relative col-span-2 lg:col-start-1 lg:row-start-2"

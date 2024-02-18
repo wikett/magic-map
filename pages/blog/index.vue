@@ -79,6 +79,13 @@ const features = [
     icon: QuestionMarkCircleIcon,
     category: "/blog/como-se-hizo",
   },
+  {
+    name: "Técnicas Fotográficas",
+    description:
+      "Aprende con nosotros todas las técnicas fotográficas que se te pasen por la cabeza. No solo de nocturnas vive el fotógrafo",
+    icon: QuestionMarkCircleIcon,
+    category: "/blog/tecnicas-fotograficas",
+  },
 ];
 useHead({
   title: "Blog de Subexpuesta.com",

@@ -42,8 +42,6 @@ export default defineEventHandler(async (event) => {
         ).toLowerCase()
       ) // trim leading/trailing spaces
   }
-  console.log('usuario 1');
-  console.log(usuarios[0])
   // Fetch all documents
   const docs = await serverQueryContent(event).find()
   const sitemap = new SitemapStream({
