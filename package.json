@@ -7,7 +7,11 @@
     "dev": "nuxt dev --port 3008",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "magic": "node seo-articulos.js magic && git pull && git add . && git commit -m 'magic' && git push --all",
+    "magiclow": "git pull && node seo-articulos.js magiclow && git add . && git commit -m 'magic' && git push --all",
+    "prueba": "node seo-articulos.js prueba",
+    "uno": "node seo-articulos.js uno && git pull && git add . && git commit -m 'uno' && git push --all"
   },
   "devDependencies": {
     "date-fns": "^3.3.1",
