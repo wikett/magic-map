@@ -64,7 +64,7 @@
                   aria-hidden="true"
                 />
               </a>
-              <UButton>Log in</UButton>
+              <UButton v-if="false">Log in</UButton>
             </div>
 
             <!-- Profile dropdown -->

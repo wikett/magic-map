@@ -1,6 +1,6 @@
 <template>
   <article
-    class="relative isolate flex flex-col overflow-hidden mt-4 border-2 border-gray-100 px-2 pb-1 pt-16"
+    class="relative isolate flex flex-col overflow-hidden mt-4 border-2 bg-white border-gray-100 px-2 pb-1 pt-16"
   >
     <img
       :src="post.imageUrl"

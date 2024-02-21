@@ -11,8 +11,8 @@ import info from "../data/info.json";
 const { prev, page, next, toc } = useContent();
 const route = useRoute();
 const open = ref(false);
-let postUno = null;
-let postDos = null;
+// let postUno = null;
+// let postDos = null;
 
 const categoria = page.value?.category ?? "/";
 
@@ -20,16 +20,16 @@ const { data } = await useAsyncData(categoria, () =>
   queryContent(categoria).find()
 );
 
-if (data.value) {
-  const randomPost = data.value?.length
-    ? Math.floor(Math.random() * data.value?.length)
-    : 10;
-  const randomPost2 = data.value?.length
-    ? Math.floor(Math.random() * data.value?.length)
-    : 10;
-  postUno = data.value[randomPost];
-  postDos = data.value[randomPost2];
-}
+// if (data.value) {
+//   const randomPost = data.value?.length
+//     ? Math.floor(Math.random() * data.value?.length)
+//     : 10;
+//   const randomPost2 = data.value?.length
+//     ? Math.floor(Math.random() * data.value?.length)
+//     : 10;
+//   postUno = data.value[randomPost];
+//   postDos = data.value[randomPost2];
+// }
 let navigation = {
   social: [
     {
@@ -313,19 +313,16 @@ useJsonld([
           </figcaption>
         </figure>
 
-        <!-- <div>
+        <div>
           <h3>Más artículos que te pueden interesar</h3>
           <div
-            class="mx-auto grid max-w-2xl auto-rows-fr grid-cols-1 gap-3 sm:mt-8 lg:mx-0 lg:max-w-none lg:grid-cols-4"
+            class="mx-auto grid max-w-2xl auto-rows-fr grid-cols-1 gap-3 mb-2 sm:mt-8 lg:mx-0 lg:max-w-none lg:grid-cols-4"
           >
-            <ThumbArticle v-if="prev && prev._path !== '/info'" :post="prev" />
-            <ThumbArticle :post="postUno" />
-            <ThumbArticle :post="postDos" />
-
+            <ThumbArticle v-if="prev" :post="prev" />
             <ThumbArticle v-if="next" :post="next" />
           </div>
-          <google-adsense type="multiplex" />
-        </div> -->
+          <!-- <google-adsense type="multiplex" /> -->
+        </div>
       </div>
     </section>
   </main>
