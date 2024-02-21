@@ -2,7 +2,9 @@ export const useUser = defineStore("userStore", {
     // state
     state: () => {
         return {
-            isLoggedIn: false
+            isLoggedIn: false,
+            user: {},
+            authReady: false
         };
     },
 
@@ -15,6 +17,9 @@ export const useUser = defineStore("userStore", {
         logout(){
             this.isLoggedIn = false;
         },
+        isAuthReady(){
+            this.authReady = true;
+        }
     }
 
     // getters

@@ -56,12 +56,6 @@
                 <span v-if="item.href !== ''" class="sr-only">{{
                   item.name
                 }}</span>
-                <!-- <component
-                  v-if="item.href !== ''"
-                  :is="item.icon"
-                  class="h-6 w-6"
-                  aria-hidden="true"
-                /> -->
                 <UAvatar
                   v-if="item.href !== ''"
                   :src="`/img/social/${item.icon}`"
@@ -70,6 +64,7 @@
                   aria-hidden="true"
                 />
               </a>
+              <UButton>Log in</UButton>
             </div>
 
             <!-- Profile dropdown -->

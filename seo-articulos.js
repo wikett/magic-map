@@ -547,7 +547,7 @@ async function obtenerCategoria() {
     if (lines.length===0){
       return;
     }
-    tituloSEO = lines[0];
+    tituloSEO = lines[0].split(';')[0]
     tituloSEO = tituloSEO[0].toUpperCase() + tituloSEO.slice(1);
 
     tituloSEO = await cleanTexto(tituloSEO);
@@ -557,11 +557,29 @@ async function obtenerCategoria() {
     console.log(`Creando la magia para: ${tituloSEO}`);
     // categoriaSEO = await chatgptMagic(getPromptCategorias(tituloSEO));
     // console.log("Categoria SEO: " + categoriaSEO);
-
-    //categoriaSEO = slugify(categoriaSEO, { separator: "-" });
-    categoriaSEO = 'tecnicas-fotograficas'
+    categoriaSEO = lines[0].split(';')[1];
+    categoriaSEO = slugify(categoriaSEO, { separator: "-" });
+    //categoriaSEO = 'tecnicas-fotograficas'
     console.log("Categoria SEO slugify: " + categoriaSEO);
     urlSEO = slugify(tituloSEO, { separator: "-" });
+
+    const folderPath = "./content/blog/"+categoriaSEO;
+
+    try {
+      // Try to access the folder
+      await fs.access(folderPath);
+      console.log('Folder already exists');
+    } catch (err) {
+        // If an error is thrown, it likely means the folder doesn't exist, so create it.
+        try {
+            await fs.mkdir(folderPath, { recursive: true });
+            console.log('Folder created successfully');
+        } catch (mkdirErr) {
+            console.error('Error creating folder:', mkdirErr);
+        }
+    }
+
+
     await generateImage(tituloSEOEnglish);
 
     articuloPathSEO = `./content/blog/${categoriaSEO}/${urlSEO}.md`;
