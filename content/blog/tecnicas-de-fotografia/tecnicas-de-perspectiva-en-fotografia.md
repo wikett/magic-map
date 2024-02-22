@@ -1,9 +1,9 @@
 ---
 title: Técnicas de perspectiva en fotografía
 description: Descubre métodos eficaces para lograr profundidad y dimensiones asombrosas en tus fotos con nuestras técnicas de perspectiva avanzadas.
-category: tecnicas-fotograficas
+category: tecnicas-de-fotografia
 published_time: 2024-02-18T15:42:20.507Z
-url: https://www.subexpuesta.com/blog/tecnicas-fotograficas/tecnicas-de-perspectiva-en-fotografia
+url: https://www.subexpuesta.com/blog/tecnicas-de-fotografia/tecnicas-de-perspectiva-en-fotografia
 created: 18 Feb 2024
 imageUrl: https://www.subexpuesta.com/img/content/tecnicas-de-perspectiva-en-fotografia_1.webp
 url_location:
@@ -32,17 +32,17 @@ head:
     - name: 'article:modified_time'
       content: '2024-02-18T15:42:20.507Z'
     - name: 'article:section'
-      content: 'tecnicas-fotograficas'
+      content: 'tecnicas-de-fotografia'
     - name: 'article:author'
       content: 'Quique Aparicio'
     - name: 'og:image'
       content: 'https://www.subexpuesta.com/img/content/tecnicas-de-perspectiva-en-fotografia_1.webp'
     - name: 'og:url'
-      content: 'https://www.subexpuesta.com/blog/tecnicas-fotograficas/tecnicas-de-perspectiva-en-fotografia'
+      content: 'https://www.subexpuesta.com/blog/tecnicas-de-fotografia/tecnicas-de-perspectiva-en-fotografia'
     - name: 'twitter:domain'
       content: 'www.subexpuesta.com'
     - name: 'twitter:url'
-      content: 'https://www.subexpuesta.com/blog/tecnicas-fotograficas/tecnicas-de-perspectiva-en-fotografia'
+      content: 'https://www.subexpuesta.com/blog/tecnicas-de-fotografia/tecnicas-de-perspectiva-en-fotografia'
     - name: 'twitter:title'
       content: 'Técnicas de perspectiva en fotografía'
     - name: 'twitter:card'

@@ -145,5 +145,91 @@
     {
       "texto": "Ver los productos"
     }
+  ],
+  "blog": [
+    {
+      "name": "Objetivos",
+      "description":
+        "Analizamos, comentamos y vemos en detalle todo tipo de objetivos para todos los tipos de cámara.",
+      "icon": "i-heroicons-camera",
+      "category": "/blog/objetivos"
+    },
+    {
+      "name": "Cómo se hizo",
+      "description":
+        "Árticulos sobre cómo se hizo la fotografía. En este caso el autor de la fotografía se pasa por nuestro Blog para comentarnos cómo se hizo y sacar de ahí valiosos trucos 🙂",
+      "icon": "i-heroicons-academic-cap",
+      "category": "/blog/como-se-hizo"
+    },
+    {
+      "name": "Técnicas Fotográficas",
+      "description":
+        "Aprende con nosotros todas las técnicas fotográficas que se te pasen por la cabeza. No solo de nocturnas vive el fotógrafo",
+      "icon": "i-heroicons-camera-solid",
+      "category": "/blog/tecnicas-de-fotografia"
+    },
+    {
+      "name": "Astrofotografía",
+      "description":
+        "Sumérgete en la fascinante belleza del cosmos con nuestra categoría de Astrofotografía. Nuestro blog te guiará desde los fundamentos de capturar las estrellas, hasta las técnicas más avanzadas en la fotografía de cielos nocturnos. Explora el universo a través de una lente, en la máxima calidad. ¡Emprende este viaje intergaláctico con nosotros!",
+      "icon": "i-heroicons-sparkles",
+      "category": "/blog/astrofotografía"
+    },
+    {
+      "name": "Fotografía de Estrellas",
+      "description":
+      "Adéntrate en la enigmática y resplandeciente sección de Fotografía de Estrellas de nuestro blog. Desde conceptos básicos hasta técnicas avanzadas, te llevamos a explorar la belleza sin límites del universo desde tu lente. ¡Prepárate para dar un salto estelar en tu habilidad de fotografiar las estrellas!",
+      "icon": "i-heroicons-star-solid",
+      "category": "/blog/fotografia-de-estrellas"
+    },
+    {
+      "name": "Fotografía de la Vía Láctea",
+      "description":
+      "Bienvenido a nuestro universo estelar. En nuestra categoría Fotografía de la Vía Láctea, te guiaremos a través de las estrellas y más allá, proporcionando tips de expertos y mostrándote cómo capturar la esencia de nuestra galaxia en una simple imagen. ¡Prepárate para deslumbrarte!",
+      "icon": "i-heroicons-cube-transparent-solid",
+      "category": "/blog/fotografia-de-la-via-lactea"
+    },
+    {
+      "name": "Fotografía Nocturna en blanco y negro",
+      "description":
+      "Adéntrate en la magia oculta en la penumbra con la categoría Fotografía Nocturna en blanco y negro en nuestro blog. Descubre cómo transformar la simpleza de la noche en increíbles fotografías monocromáticas, revelando una dimensión completamente nueva y emocionante. ¡Acompáñanos en este viaje por el mundo de claroscuros y sutilezas noturnas!",
+      "icon": "i-heroicons-receipt-refund-16-solid",
+      "category": "/blog/fotografia-nocturna-en-blanco-y-negro"
+    },
+    {
+      "name": "Fotografía Urabna Nocturna",
+      "description":
+      "Embárcate en un viaje fascinante hacia el oscuro y vibrante mundo de la Fotografía Urbana Nocturna en nuestro blog. Desde callejones tranquilos y edificios apagados, hasta el caos de las luces de la ciudad, te enseñamos cómo capturar eficazmente la esencia de la noche urbana. Descubre la serenidad, el misterio y la energía que se esconden en los rincones nocturnos de la ciudad.",
+      "icon": "i-heroicons-moon",
+      "category": "/blog/fotografia-urbana-nocturna"
+    },
+    {
+      "name": "Iluminación artificial en Fotografía nocturna",
+      "description":
+      "Adéntrate en el mágico mundo de la Iluminación Artificial en Fotografía Nocturna en nuestro blog. Descubre cómo dominar la luz para transformar la oscuridad de la noche en tu lienzo, revelando y destacando lo oculto. Prepárate para añadir una chispa de creatividad a tus fotos nocturnas.",
+      "icon": "i-heroicons-light-bulb-solid",
+      "category": "/blog/iluminacion-artificial-en-fotografia-nocturna"
+    },
+    {
+      "name": "Luz de Luna para Fotografía Nocturna",
+      "description":
+      "Explora el poder evocador de la luz lunar en la categoría Luz de Luna para Fotografía Nocturna en nuestro blog. Te enseñaremos cómo utilizar el delicado brillo de nuestro satélite natural para iluminar tus trabajos nocturnos, creando imágenes llenas de misterio y romance. La noche espera, ¡descubre su hechizo con nosotros!",
+      "icon": "i-heroicons-moon-solid",
+      "category": "/blog/luz-de-luna-para-fotografia-nocturna"
+    },
+    {
+      "name": "Retratos Nocturnos",
+      "description":
+      "Deslúmbrate bajo el hechizo de la luna y las luces de la ciudad con nuestra categoría Retratos Nocturnos. En mi blog, encontrarás una mezcla cautivadora de rostros e historias iluminados bajo el manto de la noche. Capturamos la magia que solo la oscuridad puede revelar. Únete a nosotros y redescubre la belleza de la noche a través de la lente de una cámara.",
+      "icon": "i-heroicons-users-20-solid",
+      "category": "/blog/retratos-nocturnos"
+    },
+    {
+      "name": "Técnicas de Larga Exposición",
+      "description":
+      "Descubre el arte de capturar el tiempo en un marco con nuestra categoría Técnicas de Larga Exposición. Este espacio en nuestro blog está dedicado a los entusiastas de la fotografía que desean explorar y dominar esta técnica única, capaz de transformar el aire y la luz en verdaderos pinceles. Desde ríos de luces en autopistas hasta puestas de sol que parecen durar una eternidad, te invitamos a transitar este camino creativo en fotografía con nosotros.",
+      "icon": "i-heroicons-swatch",
+      "category": "/blog/tecnicas-de-larga-exposicion"
+    }
   ]
 }

@@ -1,11 +1,11 @@
 ---
 title: Cómo utilizar técnicas fotográficas con smartphones
 description: Aprende técnicas fotográficas profesionales para smartphones y captura imágenes impresionantes. Consejos prácticos para fotos asombrosas.
-category: tecnicas-fotograficas
+category: tecnicas-de-fotografia
 published_time: 2024-02-17T17:28:43.503Z
-url: https://www.subexpuesta.com/blog/tecnicas-fotograficas/como-utilizar-tecnicas-fotograficas-con-smartphones
+url: https://www.subexpuesta.com/blog/tecnicas-de-fotografia/como-utilizar-tecnicas-de-fotografia-con-smartphones
 created: 17 Feb 2024
-imageUrl: https://www.subexpuesta.com/img/content/como-utilizar-tecnicas-fotograficas-con-smartphones_1.webp
+imageUrl: https://www.subexpuesta.com/img/content/como-utilizar-tecnicas-de-fotografia-con-smartphones_1.webp
 url_location: 
 author:
   name: Quique Aparicio
@@ -32,25 +32,25 @@ head:
     - name: 'article:modified_time'
       content: '2024-02-17T17:28:43.503Z'
     - name: 'article:section'
-      content: 'tecnicas-fotograficas'
+      content: 'tecnicas-de-fotografia'
     - name: 'article:author'
       content: 'Quique Aparicio'
     - name: 'og:image'
-      content: 'https://www.subexpuesta.com/img/content/como-utilizar-tecnicas-fotograficas-con-smartphones_1.webp'
+      content: 'https://www.subexpuesta.com/img/content/como-utilizar-tecnicas-de-fotografia-con-smartphones_1.webp'
     - name: 'og:url'
-      content: 'https://www.subexpuesta.com/blog/tecnicas-fotograficas/como-utilizar-tecnicas-fotograficas-con-smartphones'
+      content: 'https://www.subexpuesta.com/blog/tecnicas-de-fotografia/como-utilizar-tecnicas-de-fotografia-con-smartphones'
     - name: 'twitter:domain'
       content: 'www.subexpuesta.com'
     - name: 'twitter:url'
-      content: 'https://www.subexpuesta.com/blog/tecnicas-fotograficas/como-utilizar-tecnicas-fotograficas-con-smartphones'
+      content: 'https://www.subexpuesta.com/blog/tecnicas-de-fotografia/como-utilizar-tecnicas-de-fotografia-con-smartphones'
     - name: 'twitter:title'
       content: 'Cómo utilizar técnicas fotográficas con smartphones'
     - name: 'twitter:card'
-      content: 'https://www.subexpuesta.com/img/content/como-utilizar-tecnicas-fotograficas-con-smartphones_1.webp'
+      content: 'https://www.subexpuesta.com/img/content/como-utilizar-tecnicas-de-fotografia-con-smartphones_1.webp'
     - name: 'twitter:description'
       content: 'Aprende técnicas fotográficas profesionales para smartphones y captura imágenes impresionantes. Consejos prácticos para fotos asombrosas.'
     - name: 'twitter:image'
-      content: 'https://www.subexpuesta.com/img/content/como-utilizar-tecnicas-fotograficas-con-smartphones_1.webp'
+      content: 'https://www.subexpuesta.com/img/content/como-utilizar-tecnicas-de-fotografia-con-smartphones_1.webp'
     - name: 'copyright'
       content: '© 2024 www.subexpuesta.com'
 ---
@@ -62,7 +62,7 @@ La fotografía con smartphones ha experimentado una evolución inmensa, permitie
 ::photo-article
 ---
 title: Cómo utilizar técnicas fotográficas con smartphones
-imageurl: https://www.subexpuesta.com/img/content/como-utilizar-tecnicas-fotograficas-con-smartphones_1.webp
+imageurl: https://www.subexpuesta.com/img/content/como-utilizar-tecnicas-de-fotografia-con-smartphones_1.webp
 ---
 ::
 

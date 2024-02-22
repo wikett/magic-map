@@ -22,28 +22,28 @@
           class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16"
         >
           <div
-            v-for="feature in features"
-            :key="feature.name"
+            v-for="blogCategory in info.blog"
+            :key="blogCategory.name"
             class="relative pl-16"
           >
-            <NuxtLink :to="feature.category">
+            <NuxtLink :to="blogCategory.category">
               <div>
                 <dt class="text-base font-semibold leading-7 text-green-600">
                   <div
                     class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600"
                   >
-                    <component
-                      :is="feature.icon"
+                    <UIcon
+                      :name="blogCategory.icon"
                       class="h-6 w-6 text-white"
-                      aria-hidden="true"
+                      dynamic
                     />
                   </div>
-                  {{ feature.name }}
+                  {{ blogCategory.name }}
                 </dt>
                 <dd class="mt-2 text-base leading-7 text-blue-200">
-                  {{ feature.description }} <br />
+                  {{ blogCategory.description }} <br />
                   <a
-                    href="#"
+                    :href="blogCategory.category"
                     class="text-sm font-semibold leading-6 text-pink-400"
                     >Ver artículos <span aria-hidden="true">→</span></a
                   >
@@ -64,29 +64,29 @@ import {
   QuestionMarkCircleIcon,
 } from "@heroicons/vue/24/outline";
 
-const features = [
-  {
-    name: "Objetivos",
-    description:
-      "Analizamos, comentamos y vemos en detalle todo tipo de objetivos para todos los tipos de cámara.",
-    icon: ViewfinderCircleIcon,
-    category: "/blog/objetivos",
-  },
-  {
-    name: "Cómo se hizo",
-    description:
-      "Árticulos sobre cómo se hizo la fotografía. En este caso el autor de la fotografía se pasa por nuestro Blog para comentarnos cómo se hizo y sacar de ahí valiosos trucos 🙂",
-    icon: QuestionMarkCircleIcon,
-    category: "/blog/como-se-hizo",
-  },
-  {
-    name: "Técnicas Fotográficas",
-    description:
-      "Aprende con nosotros todas las técnicas fotográficas que se te pasen por la cabeza. No solo de nocturnas vive el fotógrafo",
-    icon: QuestionMarkCircleIcon,
-    category: "/blog/tecnicas-fotograficas",
-  },
-];
+// const features = [
+//   {
+//     name: "Objetivos",
+//     description:
+//       "Analizamos, comentamos y vemos en detalle todo tipo de objetivos para todos los tipos de cámara.",
+//     icon: ViewfinderCircleIcon,
+//     category: "/blog/objetivos",
+//   },
+//   {
+//     name: "Cómo se hizo",
+//     description:
+//       "Árticulos sobre cómo se hizo la fotografía. En este caso el autor de la fotografía se pasa por nuestro Blog para comentarnos cómo se hizo y sacar de ahí valiosos trucos 🙂",
+//     icon: QuestionMarkCircleIcon,
+//     category: "/blog/como-se-hizo",
+//   },
+//   {
+//     name: "Técnicas Fotográficas",
+//     description:
+//       "Aprende con nosotros todas las técnicas fotográficas que se te pasen por la cabeza. No solo de nocturnas vive el fotógrafo",
+//     icon: QuestionMarkCircleIcon,
+//     category: "/blog/tecnicas-fotograficas",
+//   },
+// ];
 useHead({
   title: "Blog de Subexpuesta.com",
   meta: [
