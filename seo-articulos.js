@@ -98,6 +98,14 @@ function promptDatosCuriosos() {
   return `Act like an ${categoriaWeb} buff. Write a list of 3 curiosities about ${categoriaWeb} of about 50 words each in ${language}.`;
 }
 
+function promptGetKeywordsByTopic(topic){
+  return `Give me 30 variations of TOPIC in the right language that address a different search intent. Include keywords + English translation. Include the topic as a column in the table too, in column B (the topic mentioned above).Reduce each to 3-5 word length keywords. Column A number. Column B the topic below (should be same each time). The topic should remain the same in each row. Column C the variations. Column D The english translation. No other columns/don’t create a column E. Write the output as a csv file. TOPIC = ${topic} LANGUAGE = ${language}`
+}
+
+function promptGetTopicDescription(topic) {
+  return `Act as a copywriter. Write a text about 30 words with a short introduction to the category "${topic}" of my blog.`
+}
+
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_GPT_API,
 });
@@ -547,19 +555,17 @@ async function obtenerCategoria() {
     if (lines.length===0){
       return;
     }
-    tituloSEO = lines[0].split(';')[0]
+    tituloSEO = lines[0].split(',')[2]
     tituloSEO = tituloSEO[0].toUpperCase() + tituloSEO.slice(1);
 
-    tituloSEO = await cleanTexto(tituloSEO);
     console.log("Generando articulo para : " + tituloSEO);
 
-    tituloSEOEnglish = await translateTitle(tituloSEO, "en-GB");
-    console.log(`Creando la magia para: ${tituloSEO}`);
-    // categoriaSEO = await chatgptMagic(getPromptCategorias(tituloSEO));
-    // console.log("Categoria SEO: " + categoriaSEO);
-    categoriaSEO = lines[0].split(';')[1];
+    tituloSEOEnglish = lines[0].split(',')[3]
+
+    categoriaSEO = lines[0].split(',')[1];
+    const categoriaSEORaw = categoriaSEO
     categoriaSEO = slugify(categoriaSEO, { separator: "-" });
-    //categoriaSEO = 'tecnicas-fotograficas'
+
     console.log("Categoria SEO slugify: " + categoriaSEO);
     urlSEO = slugify(tituloSEO, { separator: "-" });
 
@@ -574,6 +580,24 @@ async function obtenerCategoria() {
         try {
             await fs.mkdir(folderPath, { recursive: true });
             console.log('Folder created successfully');
+
+
+            const infoWeb = await fs.readFile("./data/info.json", "utf8");
+            let infoWebData = JSON.parse(infoWeb);
+            // Create description for this category
+            let newCategory = {
+              name: tituloSEO,              
+              description: await chatgptMagic(
+                promptGetTopicDescription(categoriaSEORaw),
+                "gpt-4-1106-preview"
+              ),
+              icon: 'i-heroicons-camera',
+              category: `/blog/${categoriaSEO}`
+            }
+            infoWebData.blog.push(newCategory)
+            await fs.writeFile("./data/info.json", JSON.stringify(infoWebData), "utf8");
+
+
         } catch (mkdirErr) {
             console.error('Error creating folder:', mkdirErr);
         }
@@ -903,6 +927,42 @@ async function pictureOfTheDay() {
   }
 }
 
+async function keywordGenerator() {
+  const categoriesFile = "./data/categories.json";
+  const totalKeywords = "totalKeywords.txt";
+  try {
+    // Leemos la keyword a generar
+    const data = await fs.readFile(categoriesFile, "utf8");
+    let currentCategory = "";
+
+    const lines = data.split("\n");
+    console.log('lines: '+lines.length)
+    if (lines.length===0){
+      return;
+    }
+    currentCategory= lines[0]
+   
+    console.log("Generando keywords para : " + currentCategory);
+
+    // Generate keywords
+    
+    let listado = await chatgptMagic(
+      promptGetKeywordsByTopic(currentCategory),
+      "gpt-4-1106-preview"
+    );
+    await fs.appendFile(totalKeywords, listado, "utf8");
+
+    // Remove the first line
+    lines.shift();
+
+    const modifiedContent = lines.join("\n");
+    await fs.writeFile(categoriesFile, modifiedContent, "utf8");
+  } catch (err) {
+    console.error(err);
+  }
+
+}
+
 async function traduccionTotal() {
   const language = "it";
   const traducidosFile = "traducidos.json";
@@ -1027,6 +1087,14 @@ switch (process.argv[2]) {
   case "prueba":
     console.log("Probando: " + Date.now());
     break;
+
+  case "keywordgenerator":
+    for (let index = 0; index < 46; index++) {
+      console.log("Calculando articulo: " + index);
+      await keywordGenerator();
+    }
+  
+  break;
 
   default:
     break;
