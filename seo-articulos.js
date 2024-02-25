@@ -1089,7 +1089,7 @@ switch (process.argv[2]) {
     break;
 
   case "keywordgenerator":
-    for (let index = 0; index < 111; index++) {
+    for (let index = 0; index < 999; index++) {
       console.log("Calculando articulo: " + index);
       await keywordGenerator();
     }
