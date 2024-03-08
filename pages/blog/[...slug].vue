@@ -321,7 +321,7 @@ useJsonld([
             <ThumbArticle v-if="prev" :post="prev" />
             <ThumbArticle v-if="next" :post="next" />
           </div>
-          <!-- <google-adsense type="multiplex" /> -->
+          <google-adsense type="multiplex" />
         </div>
       </div>
     </section>

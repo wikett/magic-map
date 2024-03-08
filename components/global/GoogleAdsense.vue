@@ -1,5 +1,5 @@
 <template>
-  <component v-if="isShow" :class="_class" :is="tag">
+  <component :class="_class" :is="tag">
     <ins
       v-if="type == 'in-article'"
       class="adsbygoogle"
@@ -20,8 +20,6 @@
   </component>
 </template>
 <script setup>
-const config = useRuntimeConfig();
-const isShow = true; // config.public.enableAdsense;
 const props = defineProps({
   _class: {
     type: Array,
@@ -36,15 +34,13 @@ const props = defineProps({
   },
 });
 
-if (isShow) {
-  useHead({
-    script: {
-      src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5731349288066148",
-      async: true,
-      crossorigin: "anonymous",
-    },
-  });
-}
+useHead({
+  script: {
+    src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5731349288066148",
+    async: true,
+    crossorigin: "anonymous",
+  },
+});
 onMounted(() => {
   nextTick(() => {
     try {
