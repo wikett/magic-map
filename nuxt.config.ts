@@ -43,6 +43,7 @@ export default defineNuxtConfig({
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
       htmlAttrs: { dir: "ltr", lang: "es" },
+      script: [{ src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5731349288066148', async: true, crossorigin: 'anonymous'}]
     },
   },
   image: {
